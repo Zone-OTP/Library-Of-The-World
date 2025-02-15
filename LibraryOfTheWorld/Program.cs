@@ -24,7 +24,7 @@ namespace LibraryOfTheWorld
             Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SginUp());
+            Application.Run(new SignUp());
 
         }
 

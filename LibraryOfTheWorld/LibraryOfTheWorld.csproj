@@ -96,17 +96,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DattaHandlers\JsonUsersDataHandler.cs" />
-    <Compile Include="Interfaces\interfaces.cs" />
-    <Compile Include="SginUp.cs">
+    <Compile Include="Forms\Sign in.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SginUp.Designer.cs">
+    <Compile Include="Forms\Sign in.Designer.cs">
+      <DependentUpon>Sign in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\interfaces.cs" />
+    <Compile Include="Forms\SginUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SginUp.Designer.cs">
       <DependentUpon>SginUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserClass.cs" />
-    <EmbeddedResource Include="SginUp.resx">
+    <EmbeddedResource Include="Forms\SginUp.resx">
       <DependentUpon>SginUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -119,6 +125,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\Sign in.resx">
+      <DependentUpon>Sign in.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

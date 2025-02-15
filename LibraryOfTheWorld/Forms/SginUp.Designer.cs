@@ -1,6 +1,6 @@
 ﻿namespace LibraryOfTheWorld
 {
-    partial class SginUp
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SignUpButton = new System.Windows.Forms.Button();
             this.ShowUsersTest = new System.Windows.Forms.Button();
+            this.Switch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,6 +70,7 @@
             this.NameTextBox.Size = new System.Drawing.Size(127, 20);
             this.NameTextBox.TabIndex = 2;
             this.NameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // PasswordTextBox
             // 
@@ -79,20 +81,22 @@
             this.PasswordTextBox.Size = new System.Drawing.Size(127, 20);
             this.PasswordTextBox.TabIndex = 3;
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.PasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBox_KeyPress);
             // 
-            // button1
+            // SignUpButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(262, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sign Up";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SignUpButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SignUpButton.Location = new System.Drawing.Point(262, 252);
+            this.SignUpButton.Name = "SignUpButton";
+            this.SignUpButton.Size = new System.Drawing.Size(75, 23);
+            this.SignUpButton.TabIndex = 4;
+            this.SignUpButton.Text = "Sign Up";
+            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // ShowUsersTest
             // 
+            this.ShowUsersTest.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ShowUsersTest.Location = new System.Drawing.Point(491, 241);
             this.ShowUsersTest.Name = "ShowUsersTest";
             this.ShowUsersTest.Size = new System.Drawing.Size(75, 23);
@@ -101,19 +105,30 @@
             this.ShowUsersTest.UseVisualStyleBackColor = true;
             this.ShowUsersTest.Click += new System.EventHandler(this.ShowUsersTest_Click);
             // 
-            // SginUp
+            // Switch
+            // 
+            this.Switch.Location = new System.Drawing.Point(13, 13);
+            this.Switch.Name = "Switch";
+            this.Switch.Size = new System.Drawing.Size(97, 23);
+            this.Switch.TabIndex = 6;
+            this.Switch.Text = "Switch to Sign in\r\n";
+            this.Switch.UseVisualStyleBackColor = true;
+            this.Switch.Click += new System.EventHandler(this.Switch_Click);
+            // 
+            // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 368);
+            this.Controls.Add(this.Switch);
             this.Controls.Add(this.ShowUsersTest);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "SginUp";
-            this.Text = "Library";
+            this.Name = "SignUp";
+            this.Text = "Library - SignUp";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,8 +141,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.Button ShowUsersTest;
+        private System.Windows.Forms.Button Switch;
     }
 }
 

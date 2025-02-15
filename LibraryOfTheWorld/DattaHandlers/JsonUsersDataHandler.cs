@@ -50,7 +50,7 @@ namespace LibraryOfTheWorld.DattaHandlers
         }
         public List<User> LoadUsersJson()
         {
-            //User._nextId = 1;
+            User._nextId = 1;
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("No Saved Found");
