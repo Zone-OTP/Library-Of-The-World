@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using LibraryOfTheWorld.DattaHandlers;
 
 namespace LibraryOfTheWorld.Users
@@ -24,9 +25,19 @@ namespace LibraryOfTheWorld.Users
             Name = name;
             Password = password;
         }
+
+        private bool IsUsernameTaken(string username)
+        {
+            return UserList.Any(user => user.Name == username);
+        }
         public void AddUser(User user)
         {
             UserList = datahandler.LoadUsersJson();
+            if (IsUsernameTaken(user.Name))
+            {
+                MessageBox.Show("Name is taken, choose another Name");
+                return;
+            }
             UserList.Add(user);
             datahandler.SaveUserJson(UserList);
         }
@@ -39,7 +50,7 @@ namespace LibraryOfTheWorld.Users
         public bool SignInCheck(string username, string password) {
             UserList = datahandler.LoadUsersJson();
             foreach (User user in UserList) {
-                if (username.Trim() == user.Name && password.Trim() == user.Password)
+                if (username == user.Name && password.Trim() == user.Password)
                 {
                     return true;
                 }

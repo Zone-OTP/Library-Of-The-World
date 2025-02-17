@@ -90,7 +90,7 @@ namespace LibraryOfTheWorld.DattaHandlers
                 Console.WriteLine("Users loaded successfully");
                 return users ?? new List<User>();
             }
-            catch (Exception ex) { Console.WriteLine($"Error Loading pets:{ex.Message}"); return new List<User>(); }
+            catch (Exception ex) { Console.WriteLine($"Error Loading users:{ex.Message}"); return new List<User>(); }
         }
     }
 }

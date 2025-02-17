@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using LibraryOfTheWorld;
 using LibraryOfTheWorld.Users;
 using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfTheWorld.Forms;
+
 
 namespace LibraryOfTheWorld
 {
@@ -57,9 +59,14 @@ namespace LibraryOfTheWorld
             {
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
                 {
-                    if (users.SignInCheck(name, password)) {
+                    if (users.SignInCheck(name, password))
+                    {
                         MessageBox.Show("you have signed in");
+                        Library.Instance.Show();
+                        Library.Instance.Location = this.Location;
+                        this.Hide();
                     }
+                    else { throw new Exception("name or password is incorrect"); }
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }

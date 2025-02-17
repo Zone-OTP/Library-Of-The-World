@@ -61,9 +61,12 @@ namespace LibraryOfTheWorld
 
             try
             {
-                if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
+                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password))
                 {
                     users.AddUser(new User(name, password));
+                    Signin.Instance.Show();
+                    Signin.Instance.Location = this.Location;
+                    this.Hide();
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }catch (Exception ex) {MessageBox.Show(ex.Message); }
