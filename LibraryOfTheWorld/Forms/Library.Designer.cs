@@ -106,6 +106,7 @@
             this.SignOut.TabIndex = 6;
             this.SignOut.Text = "Sign Out";
             this.SignOut.UseVisualStyleBackColor = true;
+            this.SignOut.Click += new System.EventHandler(this.SignOut_Click);
             // 
             // TakeBookOut
             // 

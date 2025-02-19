@@ -15,11 +15,10 @@ namespace LibraryOfTheWorld
         public int Id { get; }
         public string Name { get; set; }
         public string Author { get; set; }
-
-        public bool isTaken { get; set; }
+        public bool IsTaken { get; set; }
+        public string TakenByUser { get; set; }
 
         internal static int _nextId = 1;
-
         internal static JsonUsersDataHandler datahandler = new JsonUsersDataHandler();
         private static List<Book> BookList { get; set; } = new List<Book>();
 
@@ -28,44 +27,44 @@ namespace LibraryOfTheWorld
             Id = _nextId++;
             Name = name;
             Author = author;
-            isTaken = istaken;
+            IsTaken = istaken;
+            TakenByUser = "empty";
         }
         public List<Book> LoadBooks() {
             BookList = datahandler.LoadDataJson<Book>("Books");
             datahandler.SaveDataJson(BookList, "Books");
             return BookList;
         }
-
         public void saveBooks() {
-            BookList = datahandler.LoadDataJson<Book>("Books");
             datahandler.SaveDataJson(BookList, "Books");
+            BookList = datahandler.LoadDataJson<Book>("Books");
         }
-
         public bool IsBookTaken(string bookName, string authorName)
         {
-            return BookList.Any(book => book.Name == bookName && book.Author == authorName && book.isTaken);
+            return BookList.Any(book => book.Name == bookName && book.Author == authorName && book.IsTaken);
         }
-        public void ReturnBook(Book book)
+        public void ReturnBook(Book book,string currentUser)
         {
             if (IsBookTaken(book.Name, book.Author)) {
                 var ChosenBook = BookList.FirstOrDefault(b => b.Name == book.Name && b.Author == book.Author);
                 if (ChosenBook != null)
                 {
-                    ChosenBook.isTaken = false;
-                    MessageBox.Show("you've returned the book");
-                    datahandler.SaveDataJson(BookList, "Books");
-                    return;
-                }
-                else { MessageBox.Show("we have the book, you can't return it"); }
+                    if (book.TakenByUser == currentUser)
+                    {
+                        ChosenBook.IsTaken = !ChosenBook.IsTaken;
+                        MessageBox.Show("you've returned the book");
+                        datahandler.SaveDataJson(BookList, "Books");
+                        return;
+                    }
+                    else { MessageBox.Show("you're not the user that took this book,can't return it"); }
+                 }
+                 else { MessageBox.Show("we have the book, you can't return it"); }
             }
-            
         }
-
         private bool IsBookInLibrary(string bookName)
         {
             return BookList.Any(book => book.Name == bookName);
         }
-
         public void AddBook(Book book)
         {
             BookList = datahandler.LoadDataJson<Book>("Books");
@@ -77,8 +76,5 @@ namespace LibraryOfTheWorld
             BookList.Add(book);
             datahandler.SaveDataJson(BookList, "Books");
         }
-
     }
-    
-    
 }

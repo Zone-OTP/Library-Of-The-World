@@ -11,6 +11,7 @@ using LibraryOfTheWorld.Interfaces;
 using LibraryOfTheWorld.Users;
 using LibraryOfTheWorld;
 using System.Drawing;
+using System.Reflection;
 
 
 namespace LibraryOfTheWorld.DattaHandlers
@@ -51,13 +52,16 @@ namespace LibraryOfTheWorld.DattaHandlers
         public List<T> LoadDataJson<T>(string fileName)
         {
             string filePath = $"{fileName.Trim()}.json";
-            User._nextId = 1;
+            var _nextId = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
+            if (_nextId != null)
+            {
+                _nextId.SetValue(null, 1);
+            }
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("No Saved Found");
                 return new List<T>();
             }
-
             string json = File.ReadAllText(filePath);
             var options = new JsonSerializerOptions
             {

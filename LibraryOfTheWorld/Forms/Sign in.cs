@@ -62,9 +62,11 @@ namespace LibraryOfTheWorld
                     if (users.SignInCheck(name, password))
                     {
                         MessageBox.Show("you have signed in");
-                        Library.Instance.CurrentUser = name;
+                        Library.Instance.currentUser = name;
                         Library.Instance.Show();
                         Library.Instance.Location = this.Location;
+                        NameTextBox.Text="";
+                        PasswordTextBox.Text="";
                         this.Hide();
                     }
                     else { throw new Exception("name or password is incorrect"); }

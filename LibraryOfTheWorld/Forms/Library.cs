@@ -21,7 +21,7 @@ namespace LibraryOfTheWorld.Forms
         private JsonUsersDataHandler dataHandler = new JsonUsersDataHandler();
        
 
-        public string CurrentUser;
+        public string currentUser;
         
         public Library()
         {
@@ -39,8 +39,7 @@ namespace LibraryOfTheWorld.Forms
         }
         private void Library_Load(object sender, EventArgs e)
         {
-            Book.datahandler.LoadDataJson<Book>("Books");
-            SignedInAs.Text = CurrentUser;
+            SignedInAs.Text = currentUser;
             BookSelectionComboBox.DataSource = book.LoadBooks();
             BookSelectionComboBox.DisplayMember = "Name";
         }
@@ -56,7 +55,7 @@ namespace LibraryOfTheWorld.Forms
 
             NameOfBook.Text = selectedBook.Name;
             AuthorOfBook.Text = selectedBook.Author;
-            TakenOrNot.Text = $"{selectedBook.isTaken}";
+            TakenOrNot.Text = $"{selectedBook.IsTaken}";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -72,8 +71,8 @@ namespace LibraryOfTheWorld.Forms
         private void ReturnBookButton_Click(object sender, EventArgs e)
         {
             Book selectedBook = BookSelectionComboBox.SelectedItem as Book;
-            book.ReturnBook(selectedBook);
-
+            book.ReturnBook(selectedBook,currentUser);
+            BookSelectionComboBox.DataSource = book.LoadBooks();
         }
 
         private void AddBook_Click(object sender, EventArgs e)
@@ -105,21 +104,31 @@ namespace LibraryOfTheWorld.Forms
         private void TakeBookOut_Click(object sender, EventArgs e)
         {
             Book selectedBook = BookSelectionComboBox.SelectedItem as Book;
-            if (selectedBook.isTaken == true)
+            if (selectedBook.IsTaken == true)
             {
                 MessageBox.Show("book is not in ");
             }
             else
             {
-                selectedBook.isTaken = true;
+                selectedBook.TakenByUser = currentUser;
+                selectedBook.IsTaken = true;
                 book.saveBooks();
             }
-            this.Update();
+            BookSelectionComboBox.DataSource = book.LoadBooks();
         }
 
         private void Library_Activated(object sender, EventArgs e)
         {
+            SignedInAs.Text = currentUser;
+        }
 
+        private void SignOut_Click(object sender, EventArgs e)
+        {
+            SignedInAs.Text = currentUser = "";
+            Signin.Instance.Show();
+            Signin.Instance.Location = this.Location;
+            this.Hide();
+            
         }
     }
 }
