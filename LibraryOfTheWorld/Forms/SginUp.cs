@@ -84,10 +84,6 @@ namespace LibraryOfTheWorld
             this.Hide();
         }
 
-        private void SignUp_FormClosed(object sender, EventArgs e) {
-            Application.Exit();
-        }
-
         private void NameTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == ' ') 
@@ -102,6 +98,12 @@ namespace LibraryOfTheWorld
             {
                 e.Handled = true;
             }
+        }
+
+        private void SignUp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }

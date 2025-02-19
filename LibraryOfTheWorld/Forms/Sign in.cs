@@ -18,7 +18,7 @@ namespace LibraryOfTheWorld
     public partial class Signin : Form
     {
         private static User users = new User("", "");
-        private static JsonUsersDataHandler dataHandler = new JsonUsersDataHandler();
+       
 
         private static Signin instance;
         public static Signin Instance
@@ -62,6 +62,7 @@ namespace LibraryOfTheWorld
                     if (users.SignInCheck(name, password))
                     {
                         MessageBox.Show("you have signed in");
+                        Library.Instance.CurrentUser = name;
                         Library.Instance.Show();
                         Library.Instance.Location = this.Location;
                         this.Hide();
@@ -71,7 +72,6 @@ namespace LibraryOfTheWorld
                 else { throw new Exception("name or password can't be empty"); }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-
         }
 
         private void Switch_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace LibraryOfTheWorld
 
         private void Signin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
     }
 }

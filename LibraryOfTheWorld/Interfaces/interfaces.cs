@@ -10,8 +10,8 @@ namespace LibraryOfTheWorld.Interfaces
 {
     public interface IuserDataHandlerJson
     {
-        void SaveUserJson(List<User> users);
-        List<User> LoadUsersJson();
+        void SaveDataJson<T>(List<T> data,string fileName);
+        List<T> LoadDataJson<T>(string fileName);
     }
 }
 

@@ -17,9 +17,9 @@ namespace LibraryOfTheWorld.DattaHandlers
 {
     public class JsonUsersDataHandler : IuserDataHandlerJson
     {
-        private readonly static string filePath = "Users.json";
-        public void SaveUserJson(List<User> users)
+        public void SaveDataJson<T>(List<T> data, string fileName)
         {
+            string filePath = $"{fileName.Trim()}.json";
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
@@ -44,17 +44,18 @@ namespace LibraryOfTheWorld.DattaHandlers
                     }
                 }
             };
-            string json = JsonSerializer.Serialize(users, options);
+            string json = JsonSerializer.Serialize(data, options);
             File.WriteAllText(filePath, json);
-            Console.WriteLine("Users Have been saved");
+            Console.WriteLine($"{typeof(T).Name} Have been saved");
         }
-        public List<User> LoadUsersJson()
+        public List<T> LoadDataJson<T>(string fileName)
         {
+            string filePath = $"{fileName.Trim()}.json";
             User._nextId = 1;
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("No Saved Found");
-                return new List<User>();
+                return new List<T>();
             }
 
             string json = File.ReadAllText(filePath);
@@ -86,11 +87,11 @@ namespace LibraryOfTheWorld.DattaHandlers
             };
             try
             {
-                List<User>? users = JsonSerializer.Deserialize<List<User>>(json, options);
-                Console.WriteLine("Users loaded successfully");
-                return users ?? new List<User>();
+                List<T>? data = JsonSerializer.Deserialize<List<T>>(json, options);
+                Console.WriteLine($"{typeof(T)}s loaded successfully");
+                return data ?? new List<T>();
             }
-            catch (Exception ex) { Console.WriteLine($"Error Loading users:{ex.Message}"); return new List<User>(); }
+            catch (Exception ex) { Console.WriteLine($"Error Loading users:{ex.Message}"); return new List<T>(); }
         }
     }
 }

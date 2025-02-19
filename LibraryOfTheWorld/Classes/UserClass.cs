@@ -32,23 +32,23 @@ namespace LibraryOfTheWorld.Users
         }
         public void AddUser(User user)
         {
-            UserList = datahandler.LoadUsersJson();
+            UserList = datahandler.LoadDataJson<User>("Users");
             if (IsUsernameTaken(user.Name))
             {
                 MessageBox.Show("Name is taken, choose another Name");
                 return;
             }
             UserList.Add(user);
-            datahandler.SaveUserJson(UserList);
+            datahandler.SaveDataJson(UserList,"Users");
         }
 
         public void ShowUsers() {
-            UserList = datahandler.LoadUsersJson();
+            UserList = datahandler.LoadDataJson<User>("Users");
             foreach (var user in UserList) { Console.WriteLine($"{user.Id} + {user.Name} + {user.Password}"); };
         }
 
         public bool SignInCheck(string username, string password) {
-            UserList = datahandler.LoadUsersJson();
+            UserList = datahandler.LoadDataJson<User>("Users");
             foreach (User user in UserList) {
                 if (username == user.Name && password.Trim() == user.Password)
                 {
