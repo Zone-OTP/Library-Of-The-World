@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(45, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -60,7 +59,6 @@
             this.label2.Size = new System.Drawing.Size(63, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // NameTextBox
             // 
@@ -69,7 +67,6 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(127, 20);
             this.NameTextBox.TabIndex = 2;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.NameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTextBox_KeyPress);
             // 
             // PasswordTextBox
@@ -80,7 +77,6 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(127, 20);
             this.PasswordTextBox.TabIndex = 3;
-            this.PasswordTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.PasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBox_KeyPress);
             // 
             // SignUpButton

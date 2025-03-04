@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using LibraryOfTheWorld.Classes;
 using LibraryOfTheWorld.DattaHandlers;
 using LibraryOfTheWorld.Interfaces;
 using LibraryOfTheWorld.Users;
@@ -17,10 +19,11 @@ namespace LibraryOfTheWorld.Forms
 {
     public partial class Library : Form
     {
-        private static Book book = new Book("", "", false);
-        private JsonUsersDataHandler dataHandler = new JsonUsersDataHandler();
-       
 
+        private static Book book = new Book("", 0, false);
+       
+        private JsonUsersDataHandler dataHandler = new JsonUsersDataHandler();
+        
         public string currentUser;
         
         public Library()
@@ -39,9 +42,12 @@ namespace LibraryOfTheWorld.Forms
         }
         private void Library_Load(object sender, EventArgs e)
         {
+            ThemeManager.ApplyTheme(this);
             SignedInAs.Text = currentUser;
-            BookSelectionComboBox.DataSource = book.LoadBooks();
-            BookSelectionComboBox.DisplayMember = "Name";
+            BookGrid.DataSource = book.LoadBooks();
+            BookGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            BookGrid.Columns["AuthorId"].Visible = false;
+            BookGrid.ReadOnly = true;
         }
 
         private void Library_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,30 +55,16 @@ namespace LibraryOfTheWorld.Forms
             Application.Exit();
         }
 
-        private void BookSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Book selectedBook = BookSelectionComboBox.SelectedItem as Book;
-
-            NameOfBook.Text = selectedBook.Name;
-            AuthorOfBook.Text = selectedBook.Author;
-            TakenOrNot.Text = $"{selectedBook.IsTaken}";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameOfBook_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ReturnBookButton_Click(object sender, EventArgs e)
         {
-            Book selectedBook = BookSelectionComboBox.SelectedItem as Book;
+            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+            if (!selectedBook.IsTaken) {
+                MessageBox.Show("book is not taken, how are you returning it?");
+                return;
+            }
             book.ReturnBook(selectedBook,currentUser);
-            BookSelectionComboBox.DataSource = book.LoadBooks();
+            book.saveBooks();
+            BookGrid.DataSource = book.LoadBooks();
         }
 
         private void AddBook_Click(object sender, EventArgs e)
@@ -80,46 +72,54 @@ namespace LibraryOfTheWorld.Forms
             AddBookForm.Instance.Show();
             AddBookForm.Instance.Location = this.Location;
         }
-
-        private void SignedInAs_Click(object sender, EventArgs e)
+        private void UpdateBookCounts()
         {
-            
-        }
+            int totalBooks = 0;
+            int booksTaken = 0;
+            int booksAvailable = 0;
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+            foreach (var book in book.LoadBooks())
+            {
+                totalBooks++;
+                if (book.IsTaken == true) { booksTaken++; }
+                if (book.IsTaken == false) { booksAvailable++; }
+            }
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BookSelectionComboBox_Click(object sender, EventArgs e)
-        {
-
+            TotalBooksLable.Text = $"{totalBooks}";
+            BooksTakenOutLabel.Text = $"{booksTaken}";
+            BooksAvalablelabel.Text = $"{booksAvailable}";
         }
 
         private void TakeBookOut_Click(object sender, EventArgs e)
         {
-            Book selectedBook = BookSelectionComboBox.SelectedItem as Book;
-            if (selectedBook.IsTaken == true)
+            
+            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+            if (BookGrid.SelectedRows.Count == 0)
             {
-                MessageBox.Show("book is not in ");
+                MessageBox.Show("Please select a book first!");
+                return;
             }
-            else
+            if (selectedBook.IsTaken)
             {
-                selectedBook.TakenByUser = currentUser;
-                selectedBook.IsTaken = true;
-                book.saveBooks();
+                MessageBox.Show("Book is already taken out!");
+                return;
             }
-            BookSelectionComboBox.DataSource = book.LoadBooks();
+            selectedBook.TakenByUser = currentUser;
+            selectedBook.IsTaken = true;
+            book.saveBooks();
+            BookGrid.DataSource = book.LoadBooks();
+            UpdateBookCounts();
+            BookGrid.Refresh();
+            
+
         }
 
         private void Library_Activated(object sender, EventArgs e)
         {
-            SignedInAs.Text = currentUser;
+            BookGrid.DataSource = book.LoadBooks();
+            book.saveBooks();
+            UpdateBookCounts();
+            BookGrid.Refresh();
         }
 
         private void SignOut_Click(object sender, EventArgs e)
@@ -129,6 +129,63 @@ namespace LibraryOfTheWorld.Forms
             Signin.Instance.Location = this.Location;
             this.Hide();
             
+        }
+
+        private void BookGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (BookGrid.SelectedRows.Count > 0)
+            {
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                NameOfBook.Text = selectedBook.Name;
+                AuthorOfBook.Text = Author.GetAuthorNameById(selectedBook.AuthorId);
+                if (selectedBook.IsTaken)
+                {
+                    TakenOrNot.Text = $"Taken/Not Available";
+                }
+                else if (!selectedBook.IsTaken) { TakenOrNot.Text = $"Available"; }
+            }
+            
+        }
+
+        private void BookGrid_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            book.saveBooks();
+
+        }
+
+        private void BookGrid_Enter(object sender, EventArgs e)
+        {
+            BookGrid.DataSource = book.LoadBooks();
+
+        }
+
+        private void EditBookButton_Click(object sender, EventArgs e)
+        {
+            if (BookGrid.SelectedRows.Count > 0) 
+            {
+                
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                
+                EditBookForm editForm = new EditBookForm(selectedBook);
+                editForm.ShowDialog(); 
+
+                BookGrid.DataSource = null;         
+                BookGrid.DataSource = book.LoadBooks(); 
+            }
+            else
+            {
+                MessageBox.Show("Please select a book to edit.");
+            }
+        }
+
+        private void DarkModeToggleButton_Click(object sender, EventArgs e)
+        {
+            ThemeManager.IsDarkMode = !ThemeManager.IsDarkMode;
+            foreach (Form form in Application.OpenForms)
+            {
+                ThemeManager.ApplyTheme(form);
+                
+            }
         }
     }
 }

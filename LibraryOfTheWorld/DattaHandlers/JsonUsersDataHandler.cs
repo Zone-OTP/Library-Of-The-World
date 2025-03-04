@@ -24,26 +24,8 @@ namespace LibraryOfTheWorld.DattaHandlers
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
+                PropertyNameCaseInsensitive = true,
                 IncludeFields = true,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver
-                {
-                    Modifiers =
-                    { (typeInfo) =>
-                        {
-                            if (typeInfo.Type == typeof(User))
-                            {
-                                typeInfo.PolymorphismOptions = new JsonPolymorphismOptions
-                                {
-                                        TypeDiscriminatorPropertyName = "$type",
-                                        DerivedTypes =
-                                        {
-                                        new JsonDerivedType(typeof(User), "User"),
-                                        }
-                                };
-                            }
-                        }
-                    }
-                }
             };
             string json = JsonSerializer.Serialize(data, options);
             File.WriteAllText(filePath, json);
@@ -51,51 +33,57 @@ namespace LibraryOfTheWorld.DattaHandlers
         }
         public List<T> LoadDataJson<T>(string fileName)
         {
-            string filePath = $"{fileName.Trim()}.json";
             var _nextId = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
             if (_nextId != null)
             {
                 _nextId.SetValue(null, 1);
             }
+            string filePath = $"{fileName.Trim()}.json";
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("No Saved Found");
                 return new List<T>();
             }
+
             string json = File.ReadAllText(filePath);
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true,
                 PropertyNameCaseInsensitive = true,
                 IncludeFields = true,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver
-                {
-                    Modifiers =
-                    { (typeInfo) =>
-                        { if(typeInfo.Type == typeof(User))
-                          {
-                             typeInfo.PolymorphismOptions = new JsonPolymorphismOptions
-                             {
-                                TypeDiscriminatorPropertyName = "$type",
-                                IgnoreUnrecognizedTypeDiscriminators = true,
-                                DerivedTypes =
-                                {
-                                    new JsonDerivedType(typeof(User), "User"),
-                                }
-                             };
-                          }
-                        }
-
-                    }
-                }
             };
+
             try
             {
                 List<T>? data = JsonSerializer.Deserialize<List<T>>(json, options);
-                Console.WriteLine($"{typeof(T)}s loaded successfully");
+                if (data != null && data.Count > 0)
+                {
+                    
+                    int maxId = data.Max(item => (int)typeof(T).GetProperty("Id").GetValue(item));
+                    
+                    var nextIdField = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
+                    if (nextIdField != null)
+                    {
+                        nextIdField.SetValue(null, maxId + 1);
+                    }
+                }
+                else
+                {
+                    
+                    var nextIdField = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
+                    if (nextIdField != null)
+                    {
+                        nextIdField.SetValue(null, 1);
+                    }
+                }
+                Console.WriteLine($"{typeof(T).Name}s loaded successfully");
                 return data ?? new List<T>();
             }
-            catch (Exception ex) { Console.WriteLine($"Error Loading users:{ex.Message}"); return new List<T>(); }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error Loading {typeof(T).Name}s: {ex.Message}");
+                return new List<T>();
+            }
         }
     }
 }

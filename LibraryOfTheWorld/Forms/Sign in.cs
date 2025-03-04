@@ -11,15 +11,17 @@ using LibraryOfTheWorld;
 using LibraryOfTheWorld.Users;
 using LibraryOfTheWorld.DattaHandlers;
 using LibraryOfTheWorld.Forms;
+using LibraryOfTheWorld.Classes;
+using System.Runtime.InteropServices;
 
 
 namespace LibraryOfTheWorld
 {
     public partial class Signin : Form
     {
+
         private static User users = new User("", "");
        
-
         private static Signin instance;
         public static Signin Instance
         {
@@ -37,19 +39,10 @@ namespace LibraryOfTheWorld
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ThemeManager.ApplyTheme(this);
         }
         
-        private void NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void SignInButton_Click(object sender, EventArgs e)
         {
             string name = NameTextBox.Text;
@@ -87,5 +80,7 @@ namespace LibraryOfTheWorld
         {
             Application.Exit();
         }
+
+       
     }
 }

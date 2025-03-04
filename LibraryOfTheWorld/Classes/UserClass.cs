@@ -41,12 +41,10 @@ namespace LibraryOfTheWorld.Users
             UserList.Add(user);
             datahandler.SaveDataJson(UserList,"Users");
         }
-
         public void ShowUsers() {
             UserList = datahandler.LoadDataJson<User>("Users");
             foreach (var user in UserList) { Console.WriteLine($"{user.Id} + {user.Name} + {user.Password}"); };
         }
-
         public bool SignInCheck(string username, string password) {
             UserList = datahandler.LoadDataJson<User>("Users");
             foreach (User user in UserList) {
@@ -58,5 +56,4 @@ namespace LibraryOfTheWorld.Users
             return false;
         }
     }
-
 }

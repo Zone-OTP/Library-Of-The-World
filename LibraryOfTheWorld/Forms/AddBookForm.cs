@@ -4,15 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryOfTheWorld.Classes;
 
 namespace LibraryOfTheWorld.Forms
 {
     public partial class AddBookForm : Form
     {
-        private static Book book = new Book("", "",false);
+        
+
+        private static Book book = new Book("", 0,false);
         public AddBookForm()
         {
             InitializeComponent();
@@ -31,38 +35,48 @@ namespace LibraryOfTheWorld.Forms
 
         private void AddBook_Load(object sender, EventArgs e)
         {
-
+            ThemeManager.ApplyTheme(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            book.AddBook(new Book(BookNameText.Text,BookAuthorText.Text,false));
+            string bookName = BookNameText.Text;
+            string authorName = AuthorComboBox.Text;
+
+            if (string.IsNullOrEmpty(bookName) || string.IsNullOrEmpty(authorName))
+            {
+                MessageBox.Show("Book name and or author cannot be empty.");
+                return;
+            }
+
+            if (!Author.IsAuthorExists(authorName))
+            {
+                Author.AddAuthor(authorName);
+            }
+
+            Author author = Author.GetAuthorByName(authorName);
+            if (author != null)
+            {
+                Book newBook = new Book(bookName, author.Id, false);
+                book.AddBook(newBook);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error adding author.");
+                return;
+            }
+
+            Library.Instance.Activate();
             this.Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void AddBookForm_Activated(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddBookForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
+            List<Author> authors = Author.LoadAuthors(); 
+            AuthorComboBox.DataSource = null; 
+            AuthorComboBox.DataSource = authors;
+            AuthorComboBox.DisplayMember = "Name";
         }
     }
 }
