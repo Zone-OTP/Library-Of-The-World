@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryOfTheWorld;
 using LibraryOfTheWorld.Classes;
+using LibraryOfTheWorld.Services;
 
 namespace LibraryOfTheWorld.Forms
 {
@@ -26,7 +27,7 @@ namespace LibraryOfTheWorld.Forms
             InitializeComponent();
             _book = book;
             BookTitleTextBox.Text = _book.Name;
-            _author = Author.GetAuthorByName(book.AuthorName);
+            _author = AuthorService.GetAuthorByName(book.AuthorName);
             AuthorEditComboBox.Text = _author.Name;
         }
 
@@ -37,31 +38,31 @@ namespace LibraryOfTheWorld.Forms
                 MessageBox.Show("Title cannot be empty!");
                 return;
             }
-            if (!_book.IsBookInLibrary(BookTitleTextBox.Text))
+            if (!BookService.IsBookInLibrary(BookTitleTextBox.Text))
             {
                 _book.Name = BookTitleTextBox.Text;
             }
             else 
             {
-                MessageBox.Show("the book is allready within library\nyour entry is being removed");
-                _book.RemoveBook(_book);
-                _book.saveBooks();
+                _book.TotalAmountInLibrary += 1;
+                _book.AmountInLibrary += 1;
+                BookService.SaveBooks();
                 this.Close();
                 return; 
             }
-            if (!Author.IsAuthorExists(_author.Name))
+            if (!AuthorService.DoesAuthorExists(_author.Name))
             {
-                Author.AddAuthor(AuthorEditComboBox.Text);
-                _book.AuthorId = Author.GetAuthorIdByName(AuthorEditComboBox.Text);
+                AuthorService.AddAuthor(AuthorEditComboBox.Text);
+                _book.AuthorId = AuthorService.GetAuthorIdByName(AuthorEditComboBox.Text);
                 Console.WriteLine(_book.AuthorId);
             }
             else
             {
-                _book.AuthorId = Author.GetAuthorIdByName(AuthorEditComboBox.Text);
+                _book.AuthorId = AuthorService.GetAuthorIdByName(AuthorEditComboBox.Text);
             }
-            
 
-            _book.saveBooks();
+
+            BookService.SaveBooks();
             MessageBox.Show("Book updated successfully!");
             this.Close();
         }
@@ -73,7 +74,7 @@ namespace LibraryOfTheWorld.Forms
 
         private void EditBookForm_Activated(object sender, EventArgs e)
         {
-            List<Author> authors = Author.LoadAuthors(); 
+            List<Author> authors = AuthorService.LoadAuthors(); 
             AuthorEditComboBox.DataSource = null; 
             AuthorEditComboBox.DataSource = authors;
             AuthorEditComboBox.DisplayMember = "Name";

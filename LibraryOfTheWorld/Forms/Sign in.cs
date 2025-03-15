@@ -13,6 +13,7 @@ using LibraryOfTheWorld.DattaHandlers;
 using LibraryOfTheWorld.Forms;
 using LibraryOfTheWorld.Classes;
 using System.Runtime.InteropServices;
+using LibraryOfTheWorld.Services;
 
 
 namespace LibraryOfTheWorld
@@ -20,8 +21,6 @@ namespace LibraryOfTheWorld
     public partial class Signin : Form
     {
 
-        private static User users = new User("", "");
-       
         private static Signin instance;
         public static Signin Instance
         {
@@ -47,19 +46,32 @@ namespace LibraryOfTheWorld
         {
             string name = NameTextBox.Text;
             string password = PasswordTextBox.Text;
+            
 
             try
             {
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
                 {
-                    if (users.SignInCheck(name, password))
+                   
+                    if (CustomerService.ValidateLogin(name, password))
                     {
                         MessageBox.Show("you have signed in");
-                        Library.Instance.currentUser = name;
-                        Library.Instance.Show();
-                        Library.Instance.Location = this.Location;
-                        NameTextBox.Text="";
-                        PasswordTextBox.Text="";
+                        CustomerService.SaveCustomers();
+                        LibraryForCustomers.Instance.currentUser = CustomerService.GetCustomerByName(name);
+                        LibraryForCustomers.Instance.Show();
+                        LibraryForCustomers.Instance.Location = this.Location;
+                        NameTextBox.Text = "";
+                        PasswordTextBox.Text = "";
+                        this.Hide();
+                    }
+                    else if (AdminService.SignInCheck(name, password))
+                    {
+                        MessageBox.Show("you have signed in as an Admin");
+                        LibraryForAdmins.Instance.currentUser = name;
+                        LibraryForAdmins.Instance.Show();
+                        LibraryForAdmins.Instance.Location = this.Location;
+                        NameTextBox.Text = "";
+                        PasswordTextBox.Text = "";
                         this.Hide();
                     }
                     else { throw new Exception("name or password is incorrect"); }

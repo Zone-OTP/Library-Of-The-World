@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using LibraryOfTheWorld;
 using LibraryOfTheWorld.Classes;
 using LibraryOfTheWorld.Users;
+using LibraryOfTheWorld.Services;
 
 namespace LibraryOfTheWorld
 {
@@ -18,8 +19,6 @@ namespace LibraryOfTheWorld
     public partial class SignUp : Form
     {
        
-
-        private static User users = new User("","");
         private static SignUp instance;
         public static SignUp Instance
         {
@@ -45,15 +44,20 @@ namespace LibraryOfTheWorld
         {
             string name = NameTextBox.Text;
             string password = PasswordTextBox.Text;
-
+            long govId = Convert.ToInt64(GovermentIdTextBox.Text);
+            int digitCount = govId.ToString().Length;
             try
             {
                 if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password))
                 {
-                    users.AddUser(new User(name, password));
-                    Signin.Instance.Show();
-                    Signin.Instance.Location = this.Location;
-                    this.Hide();
+                    if (digitCount == 11)
+                    {
+                        CustomerService.AddCustomer(name, password, govId);
+                        Signin.Instance.Show();
+                        Signin.Instance.Location = this.Location;
+                        this.Hide();
+                    }
+                    else { throw new Exception("Goverment Id is not correct"); }
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }catch (Exception ex) {MessageBox.Show(ex.Message); }
@@ -61,7 +65,7 @@ namespace LibraryOfTheWorld
 
         private void ShowUsersTest_Click(object sender, EventArgs e)
         {
-            users.ShowUsers();
+            AdminService.ShowUsers();
         }
 
         private void Switch_Click(object sender, EventArgs e)

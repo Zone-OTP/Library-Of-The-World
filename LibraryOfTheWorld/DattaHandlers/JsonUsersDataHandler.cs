@@ -34,6 +34,7 @@ namespace LibraryOfTheWorld.DattaHandlers
         public List<T> LoadDataJson<T>(string fileName)
         {
             var _nextId = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
+           
             if (_nextId != null)
             {
                 _nextId.SetValue(null, 1);
@@ -58,9 +59,9 @@ namespace LibraryOfTheWorld.DattaHandlers
                 List<T>? data = JsonSerializer.Deserialize<List<T>>(json, options);
                 if (data != null && data.Count > 0)
                 {
-                    
-                    int maxId = data.Max(item => (int)typeof(T).GetProperty("Id").GetValue(item));
-                    
+                    string idPropertyName = typeof(T).Name + "Id";
+                    int maxId = data.Max(item => (int)typeof(T).GetProperty(idPropertyName).GetValue(item));
+                   
                     var nextIdField = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
                     if (nextIdField != null)
                     {
@@ -69,7 +70,7 @@ namespace LibraryOfTheWorld.DattaHandlers
                 }
                 else
                 {
-                    
+
                     var nextIdField = typeof(T).GetField("_nextId", BindingFlags.Static | BindingFlags.NonPublic);
                     if (nextIdField != null)
                     {

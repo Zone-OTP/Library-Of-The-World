@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryOfTheWorld.Classes;
+using LibraryOfTheWorld.Services;
 
 namespace LibraryOfTheWorld.Forms
 {
@@ -16,7 +17,9 @@ namespace LibraryOfTheWorld.Forms
     {
         
 
-        private static Book book = new Book("", 0,false);
+        //private static Book book = new Book("", 0);
+        private BookService bookService = new BookService();
+     
         public AddBookForm()
         {
             InitializeComponent();
@@ -40,6 +43,7 @@ namespace LibraryOfTheWorld.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("HERE TO DOWN");
             string bookName = BookNameText.Text;
             string authorName = AuthorComboBox.Text;
 
@@ -49,31 +53,30 @@ namespace LibraryOfTheWorld.Forms
                 return;
             }
 
-            if (!Author.IsAuthorExists(authorName))
+            if (!AuthorService.DoesAuthorExists(authorName))
             {
-                Author.AddAuthor(authorName);
+                AuthorService.AddAuthor(authorName);
             }
 
-            Author author = Author.GetAuthorByName(authorName);
+            Author author = AuthorService.GetAuthorByName(authorName);
             if (author != null)
             {
-                Book newBook = new Book(bookName, author.Id, false);
-                book.AddBook(newBook);
+                Book newBook = new Book(bookName, author.AuthorId);
+                bookService.AddBook(newBook);
+                LibraryForAdmins.Instance.Activate();
                 this.Close();
+                return;
             }
             else
             {
                 MessageBox.Show("Error adding author.");
                 return;
             }
-
-            Library.Instance.Activate();
-            this.Close();
         }
 
         private void AddBookForm_Activated(object sender, EventArgs e)
         {
-            List<Author> authors = Author.LoadAuthors(); 
+            List<Author> authors = AuthorService.LoadAuthors(); 
             AuthorComboBox.DataSource = null; 
             AuthorComboBox.DataSource = authors;
             AuthorComboBox.DisplayMember = "Name";

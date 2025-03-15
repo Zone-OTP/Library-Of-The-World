@@ -1,6 +1,6 @@
 ﻿namespace LibraryOfTheWorld.Forms
 {
-    partial class Library
+    partial class LibraryForCustomers
     {
         /// <summary>
         /// Required designer variable.
@@ -34,19 +34,12 @@
             this.SignedInAs = new System.Windows.Forms.Label();
             this.SignOut = new System.Windows.Forms.Button();
             this.TakeBookOut = new System.Windows.Forms.Button();
-            this.AddBook = new System.Windows.Forms.Button();
             this.NameOfBook = new System.Windows.Forms.Label();
             this.AuthorOfBook = new System.Windows.Forms.Label();
             this.TakenOrNot = new System.Windows.Forms.Label();
-            this.ReturnBookButton = new System.Windows.Forms.Button();
+            this.ReturnBook = new System.Windows.Forms.Button();
             this.BookGrid = new System.Windows.Forms.DataGridView();
-            this.TotalBooksLable = new System.Windows.Forms.Label();
-            this.BooksTakenOutLabel = new System.Windows.Forms.Label();
-            this.BooksAvalablelabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EditBookButton = new System.Windows.Forms.Button();
+            this.PayOverdue = new System.Windows.Forms.Button();
             this.DarkModeToggleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +85,7 @@
             this.SignedInAs.Size = new System.Drawing.Size(61, 13);
             this.SignedInAs.TabIndex = 5;
             this.SignedInAs.Text = "SignedInAs";
+            this.SignedInAs.Click += new System.EventHandler(this.SignedInAs_Click);
             // 
             // SignOut
             // 
@@ -109,22 +103,11 @@
             this.TakeBookOut.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TakeBookOut.Location = new System.Drawing.Point(297, 372);
             this.TakeBookOut.Name = "TakeBookOut";
-            this.TakeBookOut.Size = new System.Drawing.Size(91, 23);
+            this.TakeBookOut.Size = new System.Drawing.Size(110, 23);
             this.TakeBookOut.TabIndex = 7;
             this.TakeBookOut.Text = "Take Book Out";
             this.TakeBookOut.UseVisualStyleBackColor = true;
             this.TakeBookOut.Click += new System.EventHandler(this.TakeBookOut_Click);
-            // 
-            // AddBook
-            // 
-            this.AddBook.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddBook.Location = new System.Drawing.Point(603, 372);
-            this.AddBook.Name = "AddBook";
-            this.AddBook.Size = new System.Drawing.Size(91, 23);
-            this.AddBook.TabIndex = 8;
-            this.AddBook.Text = "Add Book";
-            this.AddBook.UseVisualStyleBackColor = true;
-            this.AddBook.Click += new System.EventHandler(this.AddBook_Click);
             // 
             // NameOfBook
             // 
@@ -156,16 +139,16 @@
             this.TakenOrNot.TabIndex = 11;
             this.TakenOrNot.Text = "Taken/Not Avalable";
             // 
-            // ReturnBookButton
+            // ReturnBook
             // 
-            this.ReturnBookButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ReturnBookButton.Location = new System.Drawing.Point(448, 372);
-            this.ReturnBookButton.Name = "ReturnBookButton";
-            this.ReturnBookButton.Size = new System.Drawing.Size(91, 23);
-            this.ReturnBookButton.TabIndex = 12;
-            this.ReturnBookButton.Text = "Return Book";
-            this.ReturnBookButton.UseVisualStyleBackColor = true;
-            this.ReturnBookButton.Click += new System.EventHandler(this.ReturnBookButton_Click);
+            this.ReturnBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ReturnBook.Location = new System.Drawing.Point(513, 372);
+            this.ReturnBook.Name = "ReturnBook";
+            this.ReturnBook.Size = new System.Drawing.Size(107, 23);
+            this.ReturnBook.TabIndex = 12;
+            this.ReturnBook.Text = "Return Book";
+            this.ReturnBook.UseVisualStyleBackColor = true;
+            this.ReturnBook.Click += new System.EventHandler(this.ReturnBook_Click);
             // 
             // BookGrid
             // 
@@ -175,76 +158,17 @@
             this.BookGrid.Name = "BookGrid";
             this.BookGrid.Size = new System.Drawing.Size(545, 295);
             this.BookGrid.TabIndex = 13;
-            this.BookGrid.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.BookGrid_CellStateChanged);
             this.BookGrid.SelectionChanged += new System.EventHandler(this.BookGrid_SelectionChanged);
-            this.BookGrid.Enter += new System.EventHandler(this.BookGrid_Enter);
             // 
-            // TotalBooksLable
+            // PayOverdue
             // 
-            this.TotalBooksLable.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalBooksLable.AutoSize = true;
-            this.TotalBooksLable.Location = new System.Drawing.Point(174, 259);
-            this.TotalBooksLable.Name = "TotalBooksLable";
-            this.TotalBooksLable.Size = new System.Drawing.Size(117, 13);
-            this.TotalBooksLable.TabIndex = 14;
-            this.TotalBooksLable.Text = "Amount Of Books Total";
-            // 
-            // BooksTakenOutLabel
-            // 
-            this.BooksTakenOutLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BooksTakenOutLabel.AutoSize = true;
-            this.BooksTakenOutLabel.Location = new System.Drawing.Point(174, 290);
-            this.BooksTakenOutLabel.Name = "BooksTakenOutLabel";
-            this.BooksTakenOutLabel.Size = new System.Drawing.Size(85, 13);
-            this.BooksTakenOutLabel.TabIndex = 15;
-            this.BooksTakenOutLabel.Text = "BooksTakenOut";
-            // 
-            // BooksAvalablelabel
-            // 
-            this.BooksAvalablelabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BooksAvalablelabel.AutoSize = true;
-            this.BooksAvalablelabel.Location = new System.Drawing.Point(174, 320);
-            this.BooksAvalablelabel.Name = "BooksAvalablelabel";
-            this.BooksAvalablelabel.Size = new System.Drawing.Size(82, 13);
-            this.BooksAvalablelabel.TabIndex = 16;
-            this.BooksAvalablelabel.Text = "Books in Library";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Total books in Library";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 290);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Books taken out";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 320);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Books within Library";
-            // 
-            // EditBookButton
-            // 
-            this.EditBookButton.Location = new System.Drawing.Point(749, 372);
-            this.EditBookButton.Name = "EditBookButton";
-            this.EditBookButton.Size = new System.Drawing.Size(75, 23);
-            this.EditBookButton.TabIndex = 20;
-            this.EditBookButton.Text = "Edit Book";
-            this.EditBookButton.UseVisualStyleBackColor = true;
-            this.EditBookButton.Click += new System.EventHandler(this.EditBookButton_Click);
+            this.PayOverdue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PayOverdue.Location = new System.Drawing.Point(723, 372);
+            this.PayOverdue.Name = "PayOverdue";
+            this.PayOverdue.Size = new System.Drawing.Size(101, 23);
+            this.PayOverdue.TabIndex = 20;
+            this.PayOverdue.Text = "Pay Overdue Fine";
+            this.PayOverdue.UseVisualStyleBackColor = true;
             // 
             // DarkModeToggleButton
             // 
@@ -256,36 +180,28 @@
             this.DarkModeToggleButton.UseVisualStyleBackColor = true;
             this.DarkModeToggleButton.Click += new System.EventHandler(this.DarkModeToggleButton_Click);
             // 
-            // Library
+            // LibraryForCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.DarkModeToggleButton);
-            this.Controls.Add(this.EditBookButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.BooksAvalablelabel);
-            this.Controls.Add(this.BooksTakenOutLabel);
-            this.Controls.Add(this.TotalBooksLable);
+            this.Controls.Add(this.PayOverdue);
             this.Controls.Add(this.BookGrid);
-            this.Controls.Add(this.ReturnBookButton);
+            this.Controls.Add(this.ReturnBook);
             this.Controls.Add(this.TakenOrNot);
             this.Controls.Add(this.AuthorOfBook);
             this.Controls.Add(this.NameOfBook);
-            this.Controls.Add(this.AddBook);
             this.Controls.Add(this.TakeBookOut);
             this.Controls.Add(this.SignOut);
             this.Controls.Add(this.SignedInAs);
             this.Controls.Add(this.IsTheBookTaken);
             this.Controls.Add(this.author);
             this.Controls.Add(this.name);
-            this.Name = "Library";
+            this.Name = "LibraryForCustomers";
             this.Text = "Library";
-            this.Activated += new System.EventHandler(this.Library_Activated);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Library_FormClosed);
-            this.Load += new System.EventHandler(this.Library_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LibraryForCustomers_FormClosed);
+            this.Load += new System.EventHandler(this.LibraryForCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BookGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,19 +215,12 @@
         private System.Windows.Forms.Label SignedInAs;
         private System.Windows.Forms.Button SignOut;
         private System.Windows.Forms.Button TakeBookOut;
-        private System.Windows.Forms.Button AddBook;
         private System.Windows.Forms.Label NameOfBook;
         private System.Windows.Forms.Label AuthorOfBook;
         private System.Windows.Forms.Label TakenOrNot;
-        private System.Windows.Forms.Button ReturnBookButton;
+        private System.Windows.Forms.Button ReturnBook;
         private System.Windows.Forms.DataGridView BookGrid;
-        private System.Windows.Forms.Label TotalBooksLable;
-        private System.Windows.Forms.Label BooksTakenOutLabel;
-        private System.Windows.Forms.Label BooksAvalablelabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button EditBookButton;
+        private System.Windows.Forms.Button PayOverdue;
         private System.Windows.Forms.Button DarkModeToggleButton;
     }
 }

@@ -35,13 +35,15 @@
             this.SignUpButton = new System.Windows.Forms.Button();
             this.ShowUsersTest = new System.Windows.Forms.Button();
             this.Switch = new System.Windows.Forms.Button();
+            this.GovermentIDLabel = new System.Windows.Forms.Label();
+            this.GovermentIdTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 117);
+            this.label1.Location = new System.Drawing.Point(188, 105);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5);
             this.label1.Size = new System.Drawing.Size(45, 23);
@@ -52,7 +54,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 175);
+            this.label2.Location = new System.Drawing.Point(170, 145);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5);
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -63,7 +65,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NameTextBox.Location = new System.Drawing.Point(240, 117);
+            this.NameTextBox.Location = new System.Drawing.Point(240, 105);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(127, 20);
             this.NameTextBox.TabIndex = 2;
@@ -72,7 +74,7 @@
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PasswordTextBox.Location = new System.Drawing.Point(240, 175);
+            this.PasswordTextBox.Location = new System.Drawing.Point(240, 145);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(127, 20);
@@ -82,7 +84,7 @@
             // SignUpButton
             // 
             this.SignUpButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SignUpButton.Location = new System.Drawing.Point(262, 252);
+            this.SignUpButton.Location = new System.Drawing.Point(262, 241);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
             this.SignUpButton.TabIndex = 4;
@@ -111,11 +113,31 @@
             this.Switch.UseVisualStyleBackColor = true;
             this.Switch.Click += new System.EventHandler(this.Switch_Click);
             // 
+            // GovermentIDLabel
+            // 
+            this.GovermentIDLabel.AutoSize = true;
+            this.GovermentIDLabel.Location = new System.Drawing.Point(150, 185);
+            this.GovermentIDLabel.Name = "GovermentIDLabel";
+            this.GovermentIDLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.GovermentIDLabel.Size = new System.Drawing.Size(83, 23);
+            this.GovermentIDLabel.TabIndex = 7;
+            this.GovermentIDLabel.Text = "Goverment ID";
+            // 
+            // GovermentIdTextBox
+            // 
+            this.GovermentIdTextBox.Location = new System.Drawing.Point(240, 185);
+            this.GovermentIdTextBox.MaxLength = 11;
+            this.GovermentIdTextBox.Name = "GovermentIdTextBox";
+            this.GovermentIdTextBox.Size = new System.Drawing.Size(127, 20);
+            this.GovermentIdTextBox.TabIndex = 8;
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 368);
+            this.Controls.Add(this.GovermentIdTextBox);
+            this.Controls.Add(this.GovermentIDLabel);
             this.Controls.Add(this.Switch);
             this.Controls.Add(this.ShowUsersTest);
             this.Controls.Add(this.SignUpButton);
@@ -141,6 +163,8 @@
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.Button ShowUsersTest;
         private System.Windows.Forms.Button Switch;
+        private System.Windows.Forms.Label GovermentIDLabel;
+        private System.Windows.Forms.TextBox GovermentIdTextBox;
     }
 }
 
