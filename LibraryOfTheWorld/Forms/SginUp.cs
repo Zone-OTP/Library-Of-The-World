@@ -44,10 +44,21 @@ namespace LibraryOfTheWorld
         {
             string name = NameTextBox.Text;
             string password = PasswordTextBox.Text;
-            long govId = Convert.ToInt64(GovermentIdTextBox.Text);
-            int digitCount = govId.ToString().Length;
             try
             {
+                long govId = Convert.ToInt64(GovermentIdTextBox.Text);
+            }
+            catch(FormatException) {
+                MessageBox.Show("No Letters in the Goverment ID");
+                return;
+            }
+
+           
+            try
+            {
+                
+                long govId = Convert.ToInt64(GovermentIdTextBox.Text);
+                int digitCount = govId.ToString().Length;
                 if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password))
                 {
                     if (digitCount == 11)

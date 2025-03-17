@@ -22,35 +22,5 @@ namespace LibraryOfTheWorld.Users
             Name = name;
             Password = password;
         }
-
-        //private bool IsUsernameTaken(string username)
-        //{
-        //    return UserList.Any(user => user.Name == username);
-        //}
-        //public void AddUser(Admin user)
-        //{
-        //    UserList = datahandler.LoadDataJson<Admin>("Admins");
-        //    if (IsUsernameTaken(user.Name))
-        //    {
-        //        MessageBox.Show("Name is taken, choose another Name");
-        //        return;
-        //    }
-        //    UserList.Add(user);
-        //    datahandler.SaveDataJson(UserList, "Admins");
-        //}
-        //public void ShowUsers() {
-        //    UserList = datahandler.LoadDataJson<Admin>("Admins");
-        //    foreach (var user in UserList) { Console.WriteLine($"{user.Id} + {user.Name} + {user.Password}"); };
-        //}
-        //public bool SignInCheck(string username, string password) {
-        //    UserList = datahandler.LoadDataJson<Admin>("Admins");
-        //    foreach (Admin user in UserList) {
-        //        if (username == user.Name && password.Trim() == user.Password)
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
     }
 }
