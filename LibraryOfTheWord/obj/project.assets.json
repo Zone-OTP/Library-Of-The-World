@@ -4718,11 +4718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C#\\LibraryOfTheWord\\LibraryOfTheWord\\LibraryOfTheWord.csproj",
+      "projectUniqueName": "D:\\C#\\Library-Of-The-Word\\LibraryOfTheWord\\LibraryOfTheWord.csproj",
       "projectName": "LibraryOfTheWord",
-      "projectPath": "D:\\C#\\LibraryOfTheWord\\LibraryOfTheWord\\LibraryOfTheWord.csproj",
+      "projectPath": "D:\\C#\\Library-Of-The-Word\\LibraryOfTheWord\\LibraryOfTheWord.csproj",
       "packagesPath": "C:\\Users\\KOPOLA\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\LibraryOfTheWord\\LibraryOfTheWord\\obj\\",
+      "outputPath": "D:\\C#\\Library-Of-The-Word\\LibraryOfTheWord\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -26,8 +26,6 @@ namespace LibraryOfTheWorld.Services
             dataHandler.SaveDataJson<Admin>(adminList, "Admins");
         }
 
-
-
         private static bool IsUsernameTaken(string username)
         {
             return adminList.Any(user => user.Name == username);

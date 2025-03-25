@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibraryOfTheWord")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf0b1815fd56adc4e3944b838c82fbea990f24bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1d57c27c73dcfdf6493b1926d502942496215cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibraryOfTheWord")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibraryOfTheWord")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
