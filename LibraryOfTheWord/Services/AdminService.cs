@@ -21,9 +21,12 @@ namespace LibraryOfTheWorld.Services
             adminList = dataHandler.LoadDataJson<Admin>("Admins");
         }
 
-        public static void SaveAdmins() {
-            dataHandler.SaveDataJson<Admin>(adminList,"Admins");
+        public static void SaveAdmins()
+        {
+            dataHandler.SaveDataJson<Admin>(adminList, "Admins");
         }
+
+
 
         private static bool IsUsernameTaken(string username)
         {
