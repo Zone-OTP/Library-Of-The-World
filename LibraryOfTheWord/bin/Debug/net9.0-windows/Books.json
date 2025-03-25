@@ -1,0 +1,18 @@
+[
+  {
+    "BookId": 1,
+    "Name": "test",
+    "AuthorId": 4,
+    "AmountInLibrary": 0,
+    "TotalAmountInLibrary": 2,
+    "AuthorName": "test"
+  },
+  {
+    "BookId": 2,
+    "Name": "1test",
+    "AuthorId": 5,
+    "AmountInLibrary": 1,
+    "TotalAmountInLibrary": 1,
+    "AuthorName": "test1"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "AdminId": 1,
+    "Name": "test",
+    "Password": "test"
+  },
+  {
+    "AdminId": 2,
+    "Name": "user",
+    "Password": "user"
+  },
+  {
+    "AdminId": 3,
+    "Name": "gym",
+    "Password": "gym"
+  }
+]

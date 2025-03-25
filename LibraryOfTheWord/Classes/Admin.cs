@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using LibraryOfTheWorld.DattaHandlers;
+
+namespace LibraryOfTheWorld.Users
+{
+    public class Admin
+    {
+        public int AdminId { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
+        private static int _nextId = 1;
+
+        public Admin(string name, string password)
+        {
+            AdminId = _nextId++;
+            Name = name;
+            Password = password;
+        }
+    }
+}
