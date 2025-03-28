@@ -21,7 +21,7 @@ namespace LibraryOfTheWorld.Services
         {
             dataHandler = new JsonUsersDataHandler();
             customerList = dataHandler.LoadDataJson<Customer>("Customers");
-            //
+            
         }
         
         public static List<Customer> GetAllCustomers()
@@ -61,6 +61,7 @@ namespace LibraryOfTheWorld.Services
             return newCardNumber;
         }
 
+
         public void RemoveCustomer(Customer customer)
         {
             var customerToRemove = customerList.FirstOrDefault(c => c.CustomerId == customer.CustomerId);
@@ -93,7 +94,14 @@ namespace LibraryOfTheWorld.Services
         {
             return customerList.Any(c => c.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
+        public static List<Customer> GetCustomersForBook(int bookId)
+        {
+            var allCustomers = GetAllCustomers();
 
+            return allCustomers
+                .Where(c => c.BooksTaken != null && c.BooksTaken.Any(b => b.BookId == bookId))
+                .ToList();
+        }
         public static Customer GetCustmoerByLibraryCard(int libraryCardNumber)
         {
             return customerList.FirstOrDefault(c => c.LibraryCardNumber == libraryCardNumber);
@@ -136,17 +144,19 @@ namespace LibraryOfTheWorld.Services
         public static void TakeBookOut(Book book, int libraryCard) {
             Customer currentCustomer = GetCustmoerByLibraryCard(libraryCard);
 
-            if (book.AmountInLibrary != 0)
+            if (book.AmountInLibrary == 0)
             {
-                if (!currentCustomer.BooksTaken.Any(b => b.Name == book.Name && b.BookId == book.BookId && b.AuthorId == book.AuthorId))
-                {
-                    BookService.TakeBookOut(book);
-                    currentCustomer.BooksTaken.Add(book);
-                    SaveCustomers();
-                }
-                else { MessageBox.Show("you've already taken this book out and have not returned it"); }
+                MessageBox.Show("This Book is not in the Library");
+                return;
             }
-            else { MessageBox.Show("This Book is not in the Library"); }
+
+            if (!currentCustomer.BooksTaken.Any(b => b.Name == book.Name && b.BookId == book.BookId && b.AuthorId == book.AuthorId))
+            {
+                BookService.TakeBookOut(book);
+                currentCustomer.BooksTaken.Add(book);
+                SaveCustomers();
+            }
+            else { MessageBox.Show("you've already taken this book out and have not returned it"); }
 
         }
 

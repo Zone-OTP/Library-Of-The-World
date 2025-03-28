@@ -12,13 +12,14 @@ using LibraryOfTheWorld;
 using LibraryOfTheWorld.Classes;
 using LibraryOfTheWorld.Users;
 using LibraryOfTheWorld.Services;
+using LibraryOfTheWorld.DBData;
 
 namespace LibraryOfTheWorld
 {
-
     public partial class SignUp : Form
     {
-       
+
+
         private static SignUp instance;
         public static SignUp Instance
         {

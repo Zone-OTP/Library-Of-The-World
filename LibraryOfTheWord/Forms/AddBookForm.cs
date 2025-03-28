@@ -9,15 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryOfTheWorld.Classes;
+using LibraryOfTheWorld.DBData;
 using LibraryOfTheWorld.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryOfTheWorld.Forms
 {
     public partial class AddBookForm : Form
     {
-        
 
-        //private static Book book = new Book("", 0);
         private BookService bookService = new BookService();
      
         public AddBookForm()

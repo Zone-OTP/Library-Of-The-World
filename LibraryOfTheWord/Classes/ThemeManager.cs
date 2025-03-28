@@ -11,7 +11,7 @@ namespace LibraryOfTheWorld.Classes
 {
     public static class ThemeManager
     {
-        public static bool IsDarkMode { get; set; } = false;
+        public static bool IsDarkMode { get; set; } = true;
 
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
@@ -34,8 +34,8 @@ namespace LibraryOfTheWorld.Classes
         {
             if (control is Form form && Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= 18362)
             {
-                int attribute = 20; // Default for Windows 10 version 2004 and later
-                if (Environment.OSVersion.Version.Build < 19041) // Versions 1903 and 1909
+                int attribute = 20; 
+                if (Environment.OSVersion.Version.Build < 19041) 
                 {
                     attribute = 19;
                 }
@@ -112,8 +112,6 @@ namespace LibraryOfTheWorld.Classes
                     grid.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
                     grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
                     grid.EnableHeadersVisualStyles = true;
-
-
                 }
 
             }
@@ -124,6 +122,8 @@ namespace LibraryOfTheWorld.Classes
             {
                 ApplyTheme(child);
             }
+            control.Refresh();
+
         }
     }
 }

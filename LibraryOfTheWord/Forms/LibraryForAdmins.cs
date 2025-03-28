@@ -14,26 +14,20 @@ using LibraryOfTheWorld.Interfaces;
 using LibraryOfTheWorld.Users;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using LibraryOfTheWorld.Services;
+using LibraryOfTheWorld.DBData;
+using System.Reflection;
 
 
 namespace LibraryOfTheWorld.Forms
 {
     public partial class LibraryForAdmins : Form
     {
-        
-
-        private JsonUsersDataHandler dataHandler = new JsonUsersDataHandler();
-        private List<Customer> allCustomers;
-
-
-
         public string currentUser;
-        
         public LibraryForAdmins()
         {
             InitializeComponent();
-            allCustomers = CustomerService.GetAllCustomers();
-            SetupBookGrid();
+            this.DoubleBuffered = true;
+            
         }
         private static LibraryForAdmins instance;
         public static LibraryForAdmins Instance
@@ -47,9 +41,15 @@ namespace LibraryOfTheWorld.Forms
         }
         private void Library_Load(object sender, EventArgs e)
         {
+            SetupBookGrid();
+            SignedInAs.Text = currentUser; 
             ThemeManager.ApplyTheme(this);
-            SignedInAs.Text = currentUser;
-            
+
+            this.ResumeLayout(true);
+            this.PerformLayout();
+            this.Invalidate(true);
+            this.Update();
+            this.Refresh();
         }
 
         private void Library_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,9 +59,17 @@ namespace LibraryOfTheWorld.Forms
 
         private void RemoveByRoot_Click(object sender, EventArgs e)
         {
-            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
-            BookService.RemoveBookByRoot(selectedBook);
-            BookGrid.DataSource = BookService.LoadBooks();
+            if (BookGrid.SelectedRows.Count > 0)
+            {
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                BookService.RemoveBookByRoot(selectedBook);
+                BookGrid.DataSource = BookService.LoadBooks();
+            }
+            else
+            {
+                MessageBox.Show("Please select a book first!");
+                return;
+            }
         }
 
         private void AddBook_Click(object sender, EventArgs e)
@@ -89,25 +97,25 @@ namespace LibraryOfTheWorld.Forms
 
         private void RemoveOneBook_Click(object sender, EventArgs e)
         {
-
-            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
-            if (BookGrid.SelectedRows.Count == 0)
+            if (BookGrid.SelectedRows.Count > 0)
+            {
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                BookService.RemoveBook(selectedBook);
+                BookService.SaveBooks();
+                BookGrid.DataSource = BookService.LoadBooks();
+                UpdateBookCounts();
+                BookGrid.Refresh();
+            }
+            else
             {
                 MessageBox.Show("Please select a book first!");
                 return;
             }
-            BookService.RemoveBook(selectedBook);
-            BookService.SaveBooks();
-            BookGrid.DataSource = BookService.LoadBooks();
-            UpdateBookCounts();
-            BookGrid.Refresh();
-            
 
         }
 
         private void Library_Activated(object sender, EventArgs e)
         {
-
             BookGrid.DataSource = BookService.LoadBooks();
             BookService.SaveBooks();
             UpdateBookCounts();
@@ -120,11 +128,12 @@ namespace LibraryOfTheWorld.Forms
             Signin.Instance.Show();
             Signin.Instance.Location = this.Location;
             this.Hide();
-            
+
         }
 
         private void BookGrid_SelectionChanged(object sender, EventArgs e)
         {
+            UpdateBookCounts();
             if (BookGrid.SelectedRows.Count > 0)
             {
                 Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
@@ -136,7 +145,7 @@ namespace LibraryOfTheWorld.Forms
                 }
                 else if (selectedBook.AmountInLibrary != 0) { TakenOrNot.Text = $"{selectedBook.AmountInLibrary} Available!"; }
             }
-            
+            this.Refresh();
         }
 
         private void BookGrid_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
@@ -153,16 +162,16 @@ namespace LibraryOfTheWorld.Forms
 
         private void EditBookButton_Click(object sender, EventArgs e)
         {
-            if (BookGrid.SelectedRows.Count > 0) 
+            if (BookGrid.SelectedRows.Count > 0)
             {
-                
+
                 Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
-                
+
                 EditBookForm editForm = new EditBookForm(selectedBook);
-                editForm.ShowDialog(); 
+                editForm.ShowDialog();
 
                 BookGrid.DataSource = null;
-                BookGrid.DataSource = BookService.LoadBooks(); 
+                BookGrid.DataSource = BookService.LoadBooks();
             }
             else
             {
@@ -176,78 +185,112 @@ namespace LibraryOfTheWorld.Forms
             foreach (Form form in Application.OpenForms)
             {
                 ThemeManager.ApplyTheme(form);
-                
             }
+
         }
 
         private void BookGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == BookGrid.Columns["TakenBy"].Index && e.RowIndex >= 0)
+            if (BookGrid.Columns[e.ColumnIndex].Name == "TakenBy" && e.RowIndex >= 0)
             {
-                Book book = BookGrid.Rows[e.RowIndex].DataBoundItem as Book;
-                if (book == null) return;
+                var book = (Book)BookGrid.Rows[e.RowIndex].DataBoundItem;
+                if (book != null)
+                {
+                    var cell = BookGrid.Rows[e.RowIndex].Cells["TakenBy"] as DataGridViewComboBoxCell;
+                    if (cell != null)
+                    {
+                        var takenByCustomers = CustomerService.GetCustomersForBook(book.BookId);
+                        cell.DataSource = takenByCustomers;
+                        cell.DisplayMember = "Name";
+                        cell.ValueMember = "Name";
 
-                var customersWhoTookBook = allCustomers
-                    .Where(c => c.BooksTaken.Any(b => b.BookId == book.BookId))
-                    .ToList();
-
-                e.Value = customersWhoTookBook.Any() ? customersWhoTookBook.First().Name : "None";
-                e.FormattingApplied = true; 
+                        if (takenByCustomers.Any())
+                        {
+                            string selectedName = takenByCustomers.First().Name;
+                            cell.Value = selectedName; 
+                            e.Value = selectedName;    
+                        }
+                        else
+                        {
+                            cell.Value = null;
+                            e.Value = null; 
+                        }
+                    }
+                }
             }
+
         }
 
         private void SetupBookGrid()
         {
+            BookGrid.Columns.Clear();
             BookGrid.AutoGenerateColumns = false;
-            BookGrid.DataSource = BookService.LoadBooks(); 
             BookGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            BookGrid.ReadOnly = false;
+            BookGrid.ReadOnly = true;
+            BookGrid.EditMode = DataGridViewEditMode.EditOnEnter; 
+
             BookGrid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "ID",
                 HeaderText = "ID",
-                DataPropertyName = "BookId"
+                DataPropertyName = "BookId",
+                //ReadOnly = true
             });
             BookGrid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Title",
                 HeaderText = "Title",
-                DataPropertyName = "Name"
+                DataPropertyName = "Name",
+                //ReadOnly = true
             });
             BookGrid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Author",
                 HeaderText = "Author",
-                DataPropertyName = "AuthorName"
+                DataPropertyName = "AuthorName",
+                //ReadOnly = true
             });
             BookGrid.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "AmountInLibrary",
                 HeaderText = "Amount In The Library",
-                DataPropertyName = "AmountInLibrary"
+                DataPropertyName = "AmountInLibrary",
+                //ReadOnly = true
             });
             BookGrid.Columns.Add(new DataGridViewTextBoxColumn
             {
-                Name = "Total Amoount In The Library",
-                HeaderText = "Total Amoount In The Library",
-                DataPropertyName = "TotalAmountInLibrary"
+                Name = "TotalAmountInLibrary",
+                HeaderText = "Total Amount In The Library",
+                DataPropertyName = "TotalAmountInLibrary",
+                //ReadOnly = true
             });
 
             DataGridViewComboBoxColumn comboColumn = new DataGridViewComboBoxColumn
             {
-                DataSource = CustomerService.GetAllCustomers(),
                 Name = "TakenBy",
                 HeaderText = "Taken By",
                 DisplayMember = "Name",
-                ValueMember = "Name"
+                ValueMember = "Name",
+                ReadOnly = false
             };
             BookGrid.Columns.Add(comboColumn);
 
-            allCustomers = CustomerService.GetAllCustomers();
+            BookGrid.DataSource = BookService.LoadBooks();
 
             BookGrid.CellFormatting += BookGrid_CellFormatting;
+
+            PropertyInfo gridProp = typeof(DataGridView).GetProperty("DoubleBuffered",
+            BindingFlags.NonPublic | BindingFlags.Instance);
+            gridProp.SetValue(BookGrid, true, null);
+
+            BookGrid.Invalidate();
         }
 
-       
+        private void LibraryForAdmins_Shown(object sender, EventArgs e)
+        {
+            this.Refresh();
+            BookGrid.Invalidate();
+            BookGrid.Refresh();
+        }
     }
 }

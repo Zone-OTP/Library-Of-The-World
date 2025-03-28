@@ -64,20 +64,28 @@ namespace LibraryOfTheWorld.Forms
 
         private void TakeBookOut_Click(object sender, EventArgs e)
         {
-            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
-            CustomerService.TakeBookOut(selectedBook,currentUser.LibraryCardNumber);
-            BookGrid.DataSource = null;
-            BookGrid.DataSource = BookService.LoadBooks();
-            BookGrid.Refresh();
+            if (BookGrid.SelectedRows.Count > 0)
+            {
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                CustomerService.TakeBookOut(selectedBook, currentUser.LibraryCardNumber);
+                BookGrid.DataSource = null;
+                BookGrid.DataSource = BookService.LoadBooks();
+                BookGrid.Refresh();
+            }
+            else { MessageBox.Show("pick a book"); return; }
         }
 
         private void ReturnBook_Click(object sender, EventArgs e)
         {
-            Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
-            CustomerService.ReturnBook(selectedBook,currentUser.LibraryCardNumber);
-            BookGrid.DataSource = null;
-            BookGrid.DataSource = BookService.LoadBooks();
-            BookGrid.Refresh();
+            if (BookGrid.SelectedRows.Count > 0)
+            {
+                Book selectedBook = (Book)BookGrid.SelectedRows[0].DataBoundItem;
+                CustomerService.ReturnBook(selectedBook,currentUser.LibraryCardNumber);
+                BookGrid.DataSource = null;
+                BookGrid.DataSource = BookService.LoadBooks();
+                BookGrid.Refresh();
+            }
+            else { MessageBox.Show("pick a book"); return; }
         }
 
 

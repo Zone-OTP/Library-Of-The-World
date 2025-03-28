@@ -11,7 +11,7 @@
     "BookId": 2,
     "Name": "1test",
     "AuthorId": 5,
-    "AmountInLibrary": 1,
+    "AmountInLibrary": 0,
     "TotalAmountInLibrary": 1,
     "AuthorName": "test1"
   }
