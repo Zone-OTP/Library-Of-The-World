@@ -1,0 +1,243 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#\\Library-Of-The-World\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\customercheckoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\customercheckoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\administrativeforms\\customercheckoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\customercheckoutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\administrativeforms\\admincustomercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\admincustomercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\libraryforadmins.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\libraryforadmins.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\administrativeforms\\addbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\addbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 922,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\BooksController.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAIAzwEYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T21:19:42.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminCustomerDisplay.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:17:23.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminCustomerDisplay.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs [Design]",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:49:49.114Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LibraryForAdmins.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs [Design]",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:09:21.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminCustomerDisplay.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.Designer.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.Designer.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.Designer.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIAwwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:17:31.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\BookService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\BookService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Services\\BookService.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAtwH8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T16:14:06.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LibraryForAdmins.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAYwA4BAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:10:18.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerCheckoutForm.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:40:32.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomerCheckoutForm.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs [Design]",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:40:26.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LibraryForAdmins.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.Designer.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.Designer.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.Designer.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.Designer.cs",
+              "ViewState": "AgIAABoBAAAAAAAAAAAWwDQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:10:23.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminCustomerCheck.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs [Design]",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:09:18.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\CustomersController.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T17:08:37.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddBookForm.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs [Design]",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T16:14:11.022Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

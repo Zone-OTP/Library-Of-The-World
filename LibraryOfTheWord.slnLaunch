@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "LibraryOfTheWord\\LibraryOfTheWorld.csproj",
+        "Action": "Start",
+        "DebugTarget": "LibraryOfTheWord"
+      },
+      {
+        "Path": "LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "LibraryOfTheWord\\Web\\ChangePasswordWebApp\\ChangePasswordWebApp.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]
