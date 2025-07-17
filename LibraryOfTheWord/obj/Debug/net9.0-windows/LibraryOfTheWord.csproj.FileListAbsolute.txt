@@ -283,3 +283,4 @@ D:\C#\Library-Of-The-Word\LibraryOfTheWord\bin\Debug\net9.0-windows\runtimes\win
 D:\C#\Library-Of-The-Word\LibraryOfTheWord\obj\Debug\net9.0-windows\LibraryO.B0761A21.Up2Date
 D:\C#\Library-Of-The-Word\LibraryOfTheWord\obj\Debug\net9.0-windows\LibraryOfTheWord.genruntimeconfig.cache
 D:\C#\Library-Of-The-Word\LibraryOfTheWord\obj\Debug\net9.0-windows\ref\LibraryOfTheWord.dll
+D:\C#\Library-Of-The-Word\LibraryOfTheWord\bin\Debug\net9.0-windows\LibraryOfTheWord.dll.config

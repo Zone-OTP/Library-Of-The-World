@@ -1,62 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text;
+using System.Text.Json;
+using LibraryOfTheWorld.Classes;
 using LibraryOfTheWorld.DattaHandlers;
-using LibraryOfTheWorld.Users;
 
 namespace LibraryOfTheWorld.Services
 {
     public class AdminService
     {
-        private static List<Admin> adminList;
-        private static JsonUsersDataHandler dataHandler;
-        public static int _nextId = 1;
+        private static DataHandler dataHandler = new DataHandler();
+        private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
         static AdminService()
         {
-            dataHandler = new JsonUsersDataHandler();
-            adminList = dataHandler.LoadDataJson<Admin>("Admins");
         }
 
-        public static void SaveAdmins()
+        public static async Task<bool> SignInCheck(string username, string password)
         {
-            dataHandler.SaveDataJson<Admin>(adminList, "Admins");
-        }
-
-        private static bool IsUsernameTaken(string username)
-        {
-            return adminList.Any(user => user.Name == username);
-        }
-        public static void AddUser(Admin user)
-        {
-            adminList = dataHandler.LoadDataJson<Admin>("Admins");
-            if (IsUsernameTaken(user.Name))
+            string endpoint = $"/api/admins/Validate";
+            try
             {
-                MessageBox.Show("Name is taken, choose another Name");
-                return;
+                Admin admin = new Admin(username, password);
+                string jsonAdmin = JsonSerializer.Serialize(admin);
+                var content = new StringContent(jsonAdmin, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(endpoint, content);
+                response.EnsureSuccessStatusCode();
+                return true;
             }
-            adminList.Add(user);
-            dataHandler.SaveDataJson(adminList, "Admins");
-        }
-        public static void ShowUsers()
-        {
-            adminList = dataHandler.LoadDataJson<Admin>("Admins");
-            foreach (var user in adminList) { Console.WriteLine($"{user.AdminId} + {user.Name} + {user.Password}"); };
-        }
-        public static bool SignInCheck(string username, string password)
-        {
-            adminList = dataHandler.LoadDataJson<Admin>("Admins");
-            foreach (Admin user in adminList)
+            catch (Exception ex)
             {
-                if (username == user.Name && password.Trim() == user.Password)
-                {
-                    return true;
-                }
+                NotificationService.ShowMessage($"Exeption thrown {ex}");
+                return false;
             }
-            return false;
         }
     }
 }

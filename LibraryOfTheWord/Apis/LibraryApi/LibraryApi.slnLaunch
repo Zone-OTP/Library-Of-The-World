@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "LibraryApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "..\\Library-Of-The-Word\\LibraryOfTheWord\\LibraryOfTheWorld.csproj",
+        "Action": "Start",
+        "DebugTarget": "LibraryOfTheWorld"
+      }
+    ]
+  }
+]

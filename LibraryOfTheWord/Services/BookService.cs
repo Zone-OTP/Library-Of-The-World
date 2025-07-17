@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibraryOfTheWorld;
+﻿using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using LibraryOfTheWorld.Classes;
 using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfTheWorld.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
@@ -14,143 +11,260 @@ namespace LibraryOfTheWorld.Services
     public class BookService
     {
         private static List<Book> bookList;
-        private static JsonUsersDataHandler dataHandler;
-        public static int _nextId = 1;
+        private static DataHandler dataHandler = new DataHandler();
+        private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
+
         static BookService()
         {
-            dataHandler = new JsonUsersDataHandler();
-            bookList = dataHandler.LoadDataJson<Book>("Books");
+
         }
 
-        internal List<Book> GetAllBooks()
-        {
-            return bookList;
-        }
 
-        public static List<Book> LoadBooks()
-        {
-            bookList = dataHandler.LoadDataJson<Book>("Books");
-            return bookList;
-        }
-        public static void SaveBooks()
-        {
-            dataHandler.SaveDataJson(bookList, "Books");
-        }
-        public static bool IsBookTaken(string bookName, int authorId)
-        {
-            return bookList.Any(book => book.Name == bookName && book.AuthorId == authorId && book.AmountInLibrary == 0);
-        }
-        
-        public static bool IsBookInLibrary(string bookName)
-        {
-            return bookList.Any(book => book.Name == bookName);
-        }
-        public void AddBook(Book book)
-        {
-            bookList = dataHandler.LoadDataJson<Book>("Books");
-            if (IsBookInLibrary(book.Name) && AuthorService.DoesAuthorExists(book.AuthorName))
-            {
-                book = GetBookByName(book.Name);
-                book.AmountInLibrary += 1;
-                book.TotalAmountInLibrary += 1;
-                SaveBooks();
-                return;
-            }
-            book.AmountInLibrary = 1;
-            book.TotalAmountInLibrary = 1;
-            bookList.Add(book);
-            dataHandler.SaveDataJson(bookList, "Books");
-        }
 
-        public static void RemoveBook(Book book)
+
+        public static async Task<List<Book>> LoadBooks()
         {
-            if (book.AmountInLibrary > 0 && book.TotalAmountInLibrary > 0)
+            try
             {
-                book = GetBookByName(book.Name);
-                book.TotalAmountInLibrary -= 1;
-                book.AmountInLibrary -= 1;
-                dataHandler.SaveDataJson(bookList, "Books");
-                return;
-            }
-            else if (book.AmountInLibrary == 0)
-            {
-                MessageBox.Show("this book is not within the library it can't be removed\n" +
-                    "if you want it to be removed Forever, you can remove the Root The 'REMOVE BY ROOT' button");
-            }
-        }
-        public static void RemoveBookByRoot(Book book) {
-            if (book == null)
-            {
-                MessageBox.Show("No book selected to remove.");
-                return;
-            }
-            
-
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to remove this book?\nIt will be deleted permanently",
-                "Confirmation",
-                MessageBoxButtons.YesNo
-            );
-            var bookToRemove = bookList.FirstOrDefault(b => b.BookId == book.BookId);
-
-            if (result == DialogResult.Yes)
-            {
-                if (bookList.Contains(bookToRemove))
+                var endpoint = $"/api/books";
+                HttpResponseMessage response = await client.GetAsync(endpoint);
+                string json = await response.Content.ReadAsStringAsync();
+                bookList = JsonSerializer.Deserialize<List<Book>>(json, new JsonSerializerOptions
                 {
-                    bookList.Remove(bookToRemove);
-                    try
+                    PropertyNameCaseInsensitive = true,
+                    IncludeFields = true,
+                });
+                response.EnsureSuccessStatusCode();
+                return bookList;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching Authors from API: {ex.Message}");
+                return new List<Book>();
+            }
+        }
+
+
+
+        public static async Task<bool> IsBookInLibrary(string bookName, int authorId)
+        {
+            var endpoint = $"/api/books/bookcheck/{bookName}/{authorId}";
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(endpoint);
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<bool>(content);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error checking existence: {ex.Message}");
+                return false;
+            }
+        }
+        public static async Task<bool> AddBook(string bookName, int authorId)
+        {
+            var endpoint = $"/api/books/";
+            Book book = new Book(bookName, authorId);
+            try
+            {
+                string jsonBook = JsonSerializer.Serialize(book, new JsonSerializerOptions
+                {
+                    ReferenceHandler = ReferenceHandler.Preserve,
+                    PropertyNameCaseInsensitive = true,
+                    WriteIndented = true
+                });
+                var content = new StringContent(jsonBook, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(endpoint, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    NotificationService.ShowMessage("AddedTheBook");
+                    return true;
+                }
+                else { NotificationService.ShowMessage("no bueno"); return false; }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error posting Authors to API: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static async Task<bool> RemoveBook(int bookId)
+        {
+            var endpoint = $"api/books/removeonebook/{bookId}";
+            try
+            {
+                HttpResponseMessage response = await client.PatchAsync(endpoint, null);
+                response.EnsureSuccessStatusCode();
+                NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting book: {ex.Message}");
+                return false;
+            }
+        }
+        public static async Task<bool> RemoveBookByRoot(int bookId)
+        {
+            var endpoint = $"api/books/deletebook/{bookId}";
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync(endpoint);
+                response.EnsureSuccessStatusCode();
+                NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting book: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static async Task<bool> ReturnBook(int bookId, int customerId)
+        {
+            var endpoint = $"api/books/returnbook/{bookId}/{customerId}";
+            try
+            {
+                HttpResponseMessage response = await client.PatchAsync(endpoint, null);
+                if (response.IsSuccessStatusCode)
+                {
+
+                    NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                    return true;
+                }
+                else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
+            }
+            catch (Exception ex)
+            {
+
+                NotificationService.ShowMessage($"Error {ex.Message}");
+                return false;
+            }
+        }
+
+        public static async Task<bool> TakeBookOutAsync(int bookId, int customerId)
+        {
+
+            var endpoint = $"api/books/takebookout/{bookId}/{customerId}";
+            try
+            {
+                HttpResponseMessage response = await client.PatchAsync(endpoint, null);
+                if (response.IsSuccessStatusCode)
+                {
+
+                    NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                    return true;
+                }
+                else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"Error deleting book: {ex.Message}");
+                NotificationService.ShowMessage($"Error {ex.Message}");
+                return false;
+            }
+        }
+
+        public static async Task<Book> GetBookById(int bookId)
+        {
+            var endpoint = $"api/books/getbook/{bookId}/";
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(endpoint);
+                string json = await response.Content.ReadAsStringAsync();
+                Book book = JsonSerializer.Deserialize<Book>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true,
+                    IncludeFields = true,
+                });
+                response.EnsureSuccessStatusCode();
+                return book;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting book: {ex.Message}");
+                return null;
+            }
+
+        }
+
+        public static async Task<bool> EditBook(int bookId, string bookNewName, int authorId)
+        {
+            var endpoint = $"api/books/editbook/{bookId}/{bookNewName}/{authorId}";
+            try
+            {
+                HttpResponseMessage response = await client.PatchAsync(endpoint, null);
+                response.EnsureSuccessStatusCode();
+                return true;
+
+            }
+            catch (Exception ex) { Console.WriteLine($"Error editing book: {ex.Message}"); return false; }
+        }
+
+        public static async Task<List<BookViewModel>> LoadBooksWithAuthorsAsync()
+        {
+            var books = await LoadBooks();
+            var viewModels = new List<BookViewModel>();
+
+            foreach (var book in books)
+            {
+                string authorName = await AuthorService.GetAuthorNameById(book.AuthorId);
+
+                var customers = await CheckoutService.GetCustomersForBook(book.BookId);
+                var customerNames = customers.Select(c => c.Name).ToList();
+                var customerId = customers.Select(c => c.CustomerId).ToList();
+
+                viewModels.Add(new BookViewModel
+                {
+                    BookId = book.BookId,
+                    Name = book.Name,
+                    AuthorId = book.AuthorId,
+                    AuthorName = authorName,
+                    AmountInLibrary = book.AmountInLibrary,
+                    TotalAmountInLibrary = book.TotalAmountInLibrary,
+                    TakenByCustomerNames = customerNames,
+                    CustomerId = customerId,
+                });
+            }
+
+            return viewModels;
+        }
+
+        public static async Task<bool> PayFine(int bookId, int customerId)
+        {
+            var endpoint = $"api/books/payfine/{bookId}/{customerId}";
+            try
+            {
+                await ReturnBook(bookId, customerId);
+                DialogResult dialog = NotificationService.ShowMessageYesNo("would you like to pay the fine?", "Question");
+                if (dialog == DialogResult.Yes)
+                {
+
+                    HttpResponseMessage response = await client.PatchAsync(endpoint, null);
+                    if (response.IsSuccessStatusCode)
                     {
-                        dataHandler.SaveDataJson(bookList, "Books");
-                        MessageBox.Show("Book removed successfully.");
+
+                        NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                        return true;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error saving book list: {ex.Message}");
-                    }
+                    else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
                 }
-                else
-                {
-                    MessageBox.Show("Book not found in the library.");
-                }
+                else { return false; }
             }
-        }
-        public static Book GetBookByName(string bookName)
-        {
-            bookList = dataHandler.LoadDataJson<Book>("Books");
-            return bookList.FirstOrDefault(a => a.Name.Equals(bookName, StringComparison.OrdinalIgnoreCase));
-        }
-        public static void ReturnBook(Book book)
-        {
-            if (book.AmountInLibrary != book.TotalAmountInLibrary)
+            catch (Exception ex)
             {
-                var ChosenBook = bookList.FirstOrDefault(b => b.Name == book.Name && b.AuthorId == book.AuthorId);
-                if (ChosenBook != null)
-                {
-                    ChosenBook.AmountInLibrary++;
-                    SaveBooks();
-                    MessageBox.Show("you've returned the book");
-                    return;
-                }
-                else { MessageBox.Show("we have the book, you can't return it"); }
+
+                Console.WriteLine($"Error deleting book: {ex.Message}");
+                NotificationService.ShowMessage($"Error {ex.Message}");
+                return false;
             }
-            else { MessageBox.Show("Unable to take book, you can't return something you never borrowed"); }
         }
 
-        public static void TakeBookOut(Book book)
-        {
-
-            if (!IsBookTaken(book.Name, book.AuthorId))
-            {
-                var ChosenBook = bookList.FirstOrDefault(b => b.Name == book.Name && b.AuthorId == book.AuthorId && b.BookId == book.BookId);
-                    ChosenBook.AmountInLibrary--;
-                    SaveBooks();
-                    MessageBox.Show($"you've Taken the boook {book.Name}");
-                    return;
-                    
-                    
-            }
-            else { MessageBox.Show("This Book is not in the Library"); }
-
-        }
     }
 }

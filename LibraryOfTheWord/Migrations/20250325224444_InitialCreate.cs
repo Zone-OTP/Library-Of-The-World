@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LibraryOfTheWord.Migrations
+namespace LibraryOfTheWorld.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

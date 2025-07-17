@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using LibraryOfTheWorld.DattaHandlers;
-using LibraryOfTheWorld.Users;
-using LibraryOfTheWorld;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using LibraryOfTheWorld.Services;
-using LibraryOfTheWorld.Classes;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LibraryOfTheWorld
+namespace LibraryOfTheWorld.Classes
 {
     public class Book
     {
+        [Key]
         public int BookId { get; set; }
-
         [Required]
         public string Name { get; set; }
         public int AuthorId { get; set; }
+        [JsonIgnore]
+        public Author Author { get; set; }
         public int AmountInLibrary { get; set; }
         public int TotalAmountInLibrary { get; set; }
+        [JsonIgnore]
+        public List<BookCheckout> BookCheckouts { get; set; } = new List<BookCheckout>();
 
-        public string AuthorName
+        [JsonIgnore]
+        public Task<string> AuthorName
         {
             get
             {
@@ -33,12 +27,12 @@ namespace LibraryOfTheWorld
             }
         }
 
-        private static int _nextId = 1;
+
         public Book(string name, int authorId)
         {
-            BookId = _nextId++;
             Name = name;
             AuthorId = authorId;
         }
+        public Book() { }
     }
 }

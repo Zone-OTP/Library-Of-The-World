@@ -1,34 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryOfTheWorld;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LibraryOfTheWorld.Classes
 {
     public class Customer
     {
+        [Key]
         public int CustomerId { get; set; }
         public string Name { get; set; }
-        public long PersonalGovermentID { get; set; }
+        public string PersonalGovermentID { get; set; }
         public string Password { get; set; }
         public int LibraryCardNumber { get; set; }
-        public  List<Book> BooksTaken { get; set; }
+        public string Email { get; set; }
+        public List<BookCheckout> BookCheckouts { get; set; } = new List<BookCheckout>();
 
-        public static int _nextId = 1;
 
-        public Customer(string name, string password, long personalGovermentID, int libraryCardNumber)
+        public Customer(string name, string password, string personalGovermentID, string email)
         {
-            CustomerId = _nextId++;
             Name = name;
             Password = password;
             PersonalGovermentID = personalGovermentID;
-            LibraryCardNumber = libraryCardNumber;
-            BooksTaken = new List<Book>();
+            Email = email;
         }
+
+        public Customer() { }
     }
 }

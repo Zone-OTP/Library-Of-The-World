@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace LibraryOfTheWord.Migrations
+namespace LibraryOfTheWorld.Migrations
 {
     [DbContext(typeof(LibraryContext))]
     [Migration("20250325224444_InitialCreate")]
