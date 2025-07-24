@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-namespace LibraryOfTheWorld.Classes
+namespace LibraryOfClasses.Classes
 {
     public class Customer
     {
@@ -13,7 +14,7 @@ namespace LibraryOfTheWorld.Classes
         public string Email { get; set; }
         public List<BookCheckout> BookCheckouts { get; set; } = new List<BookCheckout>();
 
-
+        
         public Customer(string name, string password, string personalGovermentID, string email)
         {
             Name = name;

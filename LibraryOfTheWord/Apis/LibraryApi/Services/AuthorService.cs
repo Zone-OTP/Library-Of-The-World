@@ -2,7 +2,6 @@
 using LibraryApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace LibraryApi.Services
 {
     public class AuthorService

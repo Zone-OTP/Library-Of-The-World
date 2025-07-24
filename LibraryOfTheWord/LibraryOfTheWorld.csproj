@@ -12,12 +12,15 @@
   <ItemGroup>
     <Compile Remove="Apis\LibraryApi - Copy\**" />
     <Compile Remove="Apis\LibraryApi\**" />
+    <Compile Remove="DattaHandlers\**" />
     <Compile Remove="Web\**" />
     <EmbeddedResource Remove="Apis\LibraryApi - Copy\**" />
     <EmbeddedResource Remove="Apis\LibraryApi\**" />
+    <EmbeddedResource Remove="DattaHandlers\**" />
     <EmbeddedResource Remove="Web\**" />
     <None Remove="Apis\LibraryApi - Copy\**" />
     <None Remove="Apis\LibraryApi\**" />
+    <None Remove="DattaHandlers\**" />
     <None Remove="Web\**" />
   </ItemGroup>
 
@@ -40,18 +43,18 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.3.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.6">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.6" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.6">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +79,11 @@
 
   <ItemGroup>
     <Folder Include="Apis\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Classes&amp;ModelLibrary\Classes&amp;ServicesLibrary.csproj" />
+    <ProjectReference Include="Apis\LibraryApi\LibraryApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -43,7 +43,7 @@ namespace LibraryApi.Services
             _context.PasswordResets.Add(passwordReset);
             _context.SaveChangesAsync();
             string resetLink = $"https://localhost:7169/reset?token={token}";
-            MailingService.SendMailToResetPassword(email, resetLink);
+            await MailingService.SendMailToResetPassword(email, resetLink);
             return true;
         }
     }

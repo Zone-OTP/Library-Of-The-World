@@ -1,8 +1,7 @@
-﻿using System.Threading.Tasks;
-using LibraryOfTheWorld.Classes;
+﻿using LibraryOfClasses.Classes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-using LibraryOfTheWorld.VeiwModes;
+using LibraryOfClasses.VeiwModes;
 
 
 namespace LibraryOfTheWorld.Forms.AdministrativeForms

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryOfTheWorld.Classes
+namespace LibraryOfClasses.Classes
 {
     public class Author
     {

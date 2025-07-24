@@ -1,9 +1,8 @@
 ﻿using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using LibraryOfTheWorld.Classes;
-using LibraryOfTheWorld.DattaHandlers;
-using LibraryOfTheWorld.VeiwModes;
+using LibraryOfClasses.Classes;
+using LibraryOfClasses.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
@@ -11,7 +10,6 @@ namespace LibraryOfTheWorld.Services
     public class BookService
     {
         private static List<Book> bookList;
-        private static DataHandler dataHandler = new DataHandler();
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
         static BookService()
@@ -225,7 +223,7 @@ namespace LibraryOfTheWorld.Services
                     BookId = book.BookId,
                     Name = book.Name,
                     AuthorId = book.AuthorId,
-                    AuthorName = authorName,
+                    AuthorName = await AuthorService.GetAuthorNameById(book.AuthorId),
                     AmountInLibrary = book.AmountInLibrary,
                     TotalAmountInLibrary = book.TotalAmountInLibrary,
                     TakenByCustomerNames = customerNames,
