@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\C#\\Library-Of-The-World\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\migrations\\20250325224444_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\migrations\\20250325224444_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sginup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sginup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\dbdata\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\dbdata\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sginup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sginup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LibraryOfTheWord\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D157922B-75A5-4FB8-A5FC-51AE0C8F27DB}|Classes\u0026ModelLibrary\\Classes\u0026ServicesLibrary.csproj|d:\\c#\\library-of-the-world\\classes\u0026modellibrary\\classes\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D157922B-75A5-4FB8-A5FC-51AE0C8F27DB}|Classes\u0026ModelLibrary\\Classes\u0026ServicesLibrary.csproj|solutionrelative:classes\u0026modellibrary\\classes\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,51 +43,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250325224444_InitialCreate.Designer.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Migrations\\20250325224444_InitialCreate.Designer.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Migrations\\20250325224444_InitialCreate.Designer.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Migrations\\20250325224444_InitialCreate.Designer.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Migrations\\20250325224444_InitialCreate.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
+              "Title": "SginUp.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwFAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T17:48:27.592Z",
+              "WhenOpened": "2025-07-24T20:24:39.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LibraryContext.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\DBData\\LibraryContext.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\DBData\\LibraryContext.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\DBData\\LibraryContext.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\DBData\\LibraryContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SginUp.Designer.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.Designer.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.Designer.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.Designer.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T17:47:29.175Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Program.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Program.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Program.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBYAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T17:46:53.999Z"
+              "WhenOpened": "2025-07-24T20:24:37.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\NotificationService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\NotificationService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\NotificationService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Services\\NotificationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\Classes\u0026ModelLibrary\\Classes\\Admin.cs",
+              "RelativeDocumentMoniker": "Classes\u0026ModelLibrary\\Classes\\Admin.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\Classes\u0026ModelLibrary\\Classes\\Admin.cs",
+              "RelativeToolTip": "Classes\u0026ModelLibrary\\Classes\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T16:30:30.654Z"
+              "WhenOpened": "2025-07-24T20:16:29.283Z",
+              "EditorCaption": ""
             }
           ]
         }

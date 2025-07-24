@@ -18,20 +18,8 @@ namespace LibraryOfTheWorld
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-
             Application.Run(new SignUp());
-
-            var serviceCollection = new ServiceCollection();
-
-            var serviceProvider = serviceCollection.BuildServiceProvider();
-
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var signUpForm = scope.ServiceProvider.GetRequiredService<SignUp>();
-                Application.Run(signUpForm);
-            }
+           
         }
-
-
     }
 }
