@@ -1,7 +1,7 @@
 ﻿using LibraryOfTheWorld.Forms.AdministrativeForms;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-using LibraryOfTheWorld.VeiwModes;
+using LibraryOfClasses.VeiwModes;
 
 
 namespace LibraryOfTheWorld.Forms

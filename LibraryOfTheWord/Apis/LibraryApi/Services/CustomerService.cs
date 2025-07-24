@@ -41,7 +41,7 @@ namespace LibraryApi.Services
                 customer.LibraryCardNumber = await GenerateUniqueLibraryCardNumber(_context);
                 await _context.Customers.AddAsync(customer);
                 await _context.SaveChangesAsync();
-                MailingService.SendMailPostRegistration(customer.Email, customer.Name);
+                await MailingService.SendMailPostRegistration(customer.Email, customer.Name);
                 return true;
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
@@ -100,7 +100,6 @@ namespace LibraryApi.Services
                 var customer = await GetCustomerByName(cust.Name, _context);
                 if (await _context.Customers.AnyAsync(c => c.Name == customer.Name && c.Password == customer.Password))
                 {
-                    MailingService.SendMailPostSginIn(customer.Email, customer.Name);
                     return true;
                 }
                 else { return false; }

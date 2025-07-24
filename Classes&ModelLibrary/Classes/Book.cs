@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using LibraryOfTheWorld.Services;
+using LibraryOfClasses;
 
-namespace LibraryOfTheWorld.Classes
+namespace LibraryOfClasses.Classes
 {
     public class Book
     {
@@ -21,10 +21,7 @@ namespace LibraryOfTheWorld.Classes
         [JsonIgnore]
         public Task<string> AuthorName
         {
-            get
-            {
-                return AuthorService.GetAuthorNameById(AuthorId);
-            }
+            get; set;
         }
 
 

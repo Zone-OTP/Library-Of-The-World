@@ -1,14 +1,16 @@
 ﻿using System.Text;
 using System.Text.Json;
-using LibraryOfTheWorld.Classes;
-using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfClasses.Classes;
+using LibraryOfClasses.VeiwModes;
+
+
 
 namespace LibraryOfTheWorld.Services
 {
     public class AuthorService
     {
 
-        private static DataHandler dataHandler = new DataHandler();
+        
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
         private static List<Author> authorList;
 

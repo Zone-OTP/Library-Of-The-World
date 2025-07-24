@@ -1,16 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryApi.Models;
 
 public partial class BookCheckout
 {
-    [Key]
     public int BookCheckoutId { get; set; }
-    [Required]
+
     public int CustomerId { get; set; }
-    [Required]
+
     public int BookId { get; set; }
 
-    [Required]
     public DateTime CheckoutDate { get; set; }
+
+    public virtual Book Book { get; set; } = null!;
+
+    public virtual Customer Customer { get; set; } = null!;
 }

@@ -1,4 +1,4 @@
-﻿namespace LibraryOfTheWorld.VeiwModes
+﻿namespace LibraryOfClasses.VeiwModes
 {
     public class CustomerCheckoutViewModel
     {

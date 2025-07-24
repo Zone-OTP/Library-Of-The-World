@@ -1,13 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryApi.Models;
 
 public partial class Author
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Key]
     public int AuthorId { get; set; }
 
     public string Name { get; set; } = null!;
+
+    public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 }

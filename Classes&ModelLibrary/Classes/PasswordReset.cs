@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryOfTheWorld.Classes
+namespace LibraryOfClasses.Classes
 {
-    internal class PasswordReset
+    public class PasswordReset
     {
         [Key]
         public int PasswordResetId { get; set; }
