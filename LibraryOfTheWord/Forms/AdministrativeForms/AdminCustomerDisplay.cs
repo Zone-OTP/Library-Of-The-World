@@ -2,15 +2,18 @@
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 using LibraryOfClasses.VeiwModes;
+using LibraryErrorLogs;
 
 
 namespace LibraryOfTheWorld.Forms.AdministrativeForms
 {
     public partial class AdminCustomerDisplay : Form
     {
+        private readonly ILoggerService _logger;
         public AdminCustomerDisplay()
         {
             InitializeComponent();
+            _logger = new LoggerService("AdminCustomerDisplay");
         }
 
         private async void AdminCustomerDisplay_Load(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace LibraryOfTheWorld.Forms.AdministrativeForms
                 CustomerDataGrid.Refresh();
                 CustomerDataGrid.DataSource = await CustomerService.LoadCustmers();
             }
-            catch (Exception ex) { NotificationService.ShowMessage(ex.Message); }
+            catch (Exception ex) { await _logger.LogError(ex,"Error at AdminCustomerDisplayform : "+ex.Message); }
         }
 
         private async Task CustomerGridViewSetUp(int customerId)
@@ -103,7 +106,7 @@ namespace LibraryOfTheWorld.Forms.AdministrativeForms
 
                 CheckoutsDataGrid.DataSource = viewModels;
             }
-            catch { NotificationService.ShowMessage("failed To Set Up Grid In AdminCustomerDisplayForm "); }
+            catch (Exception ex){ await _logger.LogError(ex,"failed To Set Up Grid In AdminCustomerDisplayForm : " +ex.Message); }
         }
 
         private async void CustomerDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -114,7 +117,7 @@ namespace LibraryOfTheWorld.Forms.AdministrativeForms
 
                 await CustomerGridViewSetUp(Selectedcustomer.CustomerId);
             }
-            catch { NotificationService.ShowMessage("Failed to Change SelectedCustomerData FROM CellClick in customerDataGrid"); }
+            catch(Exception ex) { await _logger.LogError(ex,"Failed to Change SelectedCustomerData FROM CellClick in customerDataGrid: "+ex.Message); }
         }
 
         private async void ForceReturnBookButton_Click(object sender, EventArgs e)
@@ -126,9 +129,9 @@ namespace LibraryOfTheWorld.Forms.AdministrativeForms
                 await BookService.ReturnBook(selectedCheckout.BookId, selectedCheckout.CustomerId);
                 await CustomerGridViewSetUp(tempId);
             }
-            catch
+            catch(Exception ex)
             {
-                NotificationService.ShowMessage("Error In ForceReturnBookButtonClick in Adminsistrator Customer Display --Falure");
+                await _logger.LogError(ex,"Error In ForceReturnBookButtonClick in Adminsistrator Customer Display --Falure: " +ex.Message);
             }
         }
 

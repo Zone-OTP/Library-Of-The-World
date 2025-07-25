@@ -1,96 +1,104 @@
 ﻿using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 using LibraryOfClasses.VeiwModes;
+using LibraryErrorLogs;
 using System.Data;
 
 namespace LibraryOfTheWorld.Forms
 {
     public partial class CustomerCheckoutForm : Form
     {
+        private readonly ILoggerService _logger;
         private readonly int _bookId;
         public CustomerCheckoutForm(int bookId)
         {
             InitializeComponent();
+            _logger = new LoggerService("CustomerCheckoutForm");
             _bookId = bookId;
             this.DoubleBuffered = true;
         }
 
         private async Task CustomerGridViewSetUp(int bookId)
         {
-            var book = await BookService.GetBookById(bookId);
-            if (book == null)
+            try
             {
-                NotificationService.ShowMessage("Book not found.", "Error");
-                return;
+                var book = await BookService.GetBookById(bookId);
+                if (book == null)
+                {
+                    NotificationService.ShowMessage("Book not found.", "Error");
+                    return;
+                }
+                var authorName = await AuthorService.GetAuthorNameById(book.AuthorId);
+
+                BookInfoLabel.Text = $"Book ID: {book.BookId}, Title: {book.Name}, Author: {authorName}";
+
+                var checkouts = await CheckoutService.LoadCheckouts();
+                var customers = await CustomerService.LoadCustmers();
+                var dailyFineRate = 0.5;
+                var viewModels = checkouts.Where(c => c.BookId == _bookId).Select(c => new CustomerCheckoutViewModel
+                {
+                    BookId = _bookId,
+                    CustomerId = c.CustomerId,
+                    CustomerName = customers.FirstOrDefault(cu => cu.CustomerId == c.CustomerId).Name,
+                    CheckoutDate = c.CheckoutDate,
+                    FineAmount = DateTime.Now.Month > c.CheckoutDate.Month ? (DateTime.Now - c.CheckoutDate).Days * dailyFineRate : 0.0,
+                    DaysTakenOut = (DateTime.Now - c.CheckoutDate).Days
+                }).ToList();
+
+                CustomerGrid.DataSource = null;
+                CustomerGrid.Columns.Clear();
+
+                CustomerGrid.AutoGenerateColumns = false;
+                CustomerGrid.AllowUserToAddRows = false;
+                CustomerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                CustomerGrid.MultiSelect = false;
+                CustomerGrid.ReadOnly = true;
+
+                CustomerGrid.DefaultCellStyle.SelectionBackColor = CustomerGrid.DefaultCellStyle.BackColor;
+                CustomerGrid.DefaultCellStyle.SelectionForeColor = CustomerGrid.DefaultCellStyle.ForeColor;
+
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Book ID",
+                    DataPropertyName = "BookId",
+                    Width = 80,
+                });
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Customer ID",
+                    DataPropertyName = "CustomerId",
+                    Width = 80,
+                });
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Customer Name",
+                    DataPropertyName = "CustomerName",
+                    Width = 120,
+                });
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Checkout Date",
+                    DataPropertyName = "CheckoutDate",
+                    Width = 100,
+                });
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Fine Due",
+                    Name = "Fine Due",
+                    DataPropertyName = "FineAmount",
+                    Width = 80,
+                });
+                CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = "Days Taken Out",
+                    DataPropertyName = "DaysTakenOut",
+                    Width = 80,
+                });
+
+                CustomerGrid.DataSource = viewModels;
             }
-            var authorName = await AuthorService.GetAuthorNameById(book.AuthorId);
+            catch (Exception ex) { await _logger.LogError(ex, "Error at Customer Grid veiw set up in CustomerCheckout form ERROR :" + ex.Message); }
 
-            BookInfoLabel.Text = $"Book ID: {book.BookId}, Title: {book.Name}, Author: {authorName}";
-
-            var checkouts = await CheckoutService.LoadCheckouts();
-            var customers = await CustomerService.LoadCustmers();
-            var dailyFineRate = 0.5;
-            var viewModels = checkouts.Where(c => c.BookId == _bookId).Select(c => new CustomerCheckoutViewModel
-            {
-                BookId = _bookId,
-                CustomerId = c.CustomerId,
-                CustomerName = customers.FirstOrDefault(cu => cu.CustomerId == c.CustomerId).Name,
-                CheckoutDate = c.CheckoutDate,
-                FineAmount = DateTime.Now.Month > c.CheckoutDate.Month ? (DateTime.Now - c.CheckoutDate).Days * dailyFineRate : 0.0,
-                DaysTakenOut = (DateTime.Now - c.CheckoutDate).Days
-            }).ToList();
-
-            CustomerGrid.DataSource = null;
-            CustomerGrid.Columns.Clear();
-
-            CustomerGrid.AutoGenerateColumns = false;
-            CustomerGrid.AllowUserToAddRows = false;
-            CustomerGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            CustomerGrid.MultiSelect = false;
-            CustomerGrid.ReadOnly = true;
-
-            CustomerGrid.DefaultCellStyle.SelectionBackColor = CustomerGrid.DefaultCellStyle.BackColor;
-            CustomerGrid.DefaultCellStyle.SelectionForeColor = CustomerGrid.DefaultCellStyle.ForeColor;
-
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Book ID",
-                DataPropertyName = "BookId",
-                Width = 80,
-            });
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Customer ID",
-                DataPropertyName = "CustomerId",
-                Width = 80,
-            });
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Customer Name",
-                DataPropertyName = "CustomerName",
-                Width = 120,
-            });
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Checkout Date",
-                DataPropertyName = "CheckoutDate",
-                Width = 100,
-            });
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Fine Due",
-                Name = "Fine Due",
-                DataPropertyName = "FineAmount",
-                Width = 80,
-            });
-            CustomerGrid.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                HeaderText = "Days Taken Out",
-                DataPropertyName = "DaysTakenOut",
-                Width = 80,
-            });
-
-            CustomerGrid.DataSource = viewModels;
         }
 
         private void CustomerGridVeiw_CellContentClick(object sender, DataGridViewCellEventArgs e)

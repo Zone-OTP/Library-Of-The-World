@@ -1,8 +1,10 @@
-﻿using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
 using LibraryOfClasses.VeiwModes;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibraryOfTheWorld.Services
 {
@@ -11,7 +13,7 @@ namespace LibraryOfTheWorld.Services
     {
         private static List<Book> bookList;
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
-
+        private static readonly ILoggerService _logger = new LoggerService("BookServiceFrontEnd");
         static BookService()
         {
 
@@ -37,7 +39,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error fetching Authors from API: {ex.Message}");
+                await _logger.LogError(ex, $"Error fetching Authors from API: {ex.Message}");
                 return new List<Book>();
             }
         }
@@ -56,7 +58,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error checking existence: {ex.Message}");
+                await _logger.LogError(ex, $"Error checking existence: {ex.Message}");
                 return false;
             }
         }
@@ -77,15 +79,15 @@ namespace LibraryOfTheWorld.Services
                 HttpResponseMessage response = await client.PostAsync(endpoint, content);
                 if (response.IsSuccessStatusCode)
                 {
-                    NotificationService.ShowMessage("AddedTheBook");
+                    await _logger.LogInformation($"Added a new book {book.Name} with AuthorId:{authorId}");
                     return true;
                 }
-                else { NotificationService.ShowMessage("no bueno"); return false; }
+                else { NotificationService.ShowMessage("could not add The Book"); return false; }
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error posting Authors to API: {ex.Message}");
+                await _logger.LogError(ex,$"Error posting Authors to API: {ex.Message}");
                 return false;
             }
         }
@@ -97,12 +99,12 @@ namespace LibraryOfTheWorld.Services
             {
                 HttpResponseMessage response = await client.PatchAsync(endpoint, null);
                 response.EnsureSuccessStatusCode();
-                NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting book: {ex.Message}");
+                await _logger.LogError(ex,$"Error deleting book: {ex.Message}");
                 return false;
             }
         }
@@ -113,12 +115,12 @@ namespace LibraryOfTheWorld.Services
             {
                 HttpResponseMessage response = await client.DeleteAsync(endpoint);
                 response.EnsureSuccessStatusCode();
-                NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}");
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting book: {ex.Message}");
+                await _logger.LogError(ex, $"Error deleting book: {ex.Message}");
                 return false;
             }
         }
@@ -132,15 +134,15 @@ namespace LibraryOfTheWorld.Services
                 if (response.IsSuccessStatusCode)
                 {
 
-                    NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                    await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}");
                     return true;
                 }
-                else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
+                else { await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}"); return false; }
             }
             catch (Exception ex)
             {
 
-                NotificationService.ShowMessage($"Error {ex.Message}");
+                await _logger.LogError(ex,$"Error {ex.Message}");
                 return false;
             }
         }
@@ -155,16 +157,15 @@ namespace LibraryOfTheWorld.Services
                 if (response.IsSuccessStatusCode)
                 {
 
-                    NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                    await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}");
                     return true;
                 }
-                else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
+                else { await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}"); return false; }
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine($"Error deleting book: {ex.Message}");
-                NotificationService.ShowMessage($"Error {ex.Message}");
+                await _logger.LogError(ex, $"Error deleting book: {ex.Message}");
                 return false;
             }
         }
@@ -186,7 +187,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting book: {ex.Message}");
+                await _logger.LogError(ex, $"Error deleting book: {ex.Message}");
                 return null;
             }
 
@@ -202,7 +203,7 @@ namespace LibraryOfTheWorld.Services
                 return true;
 
             }
-            catch (Exception ex) { Console.WriteLine($"Error editing book: {ex.Message}"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"Error editing book: {ex.Message}"); return false; }
         }
 
         public static async Task<List<BookViewModel>> LoadBooksWithAuthorsAsync()
@@ -248,18 +249,17 @@ namespace LibraryOfTheWorld.Services
                     if (response.IsSuccessStatusCode)
                     {
 
-                        NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}");
+                        await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}");
                         return true;
                     }
-                    else { NotificationService.ShowMessage($"{await response.Content.ReadAsStringAsync()}"); return false; }
+                    else { await _logger.LogInformation($"{await response.Content.ReadAsStringAsync()}"); return false; }
                 }
                 else { return false; }
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine($"Error deleting book: {ex.Message}");
-                NotificationService.ShowMessage($"Error {ex.Message}");
+                await _logger.LogError(ex, $"Error deleting book: {ex.Message}");
                 return false;
             }
         }

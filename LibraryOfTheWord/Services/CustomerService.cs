@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
 using LibraryOfTheWorld.Services;
 
@@ -9,7 +10,7 @@ namespace LibraryOfTheWorld.Services
     {
         private static List<Customer> customerList;
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
-
+        private readonly static ILoggerService _logger = new LoggerService("CustomerServiceFrontEnd");
         static CustomerService()
         {
 
@@ -32,7 +33,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting book: {ex.Message}");
+                await _logger.LogError(ex, $"Error {ex.Message}");
                 return null;
             }
         }
@@ -96,12 +97,11 @@ namespace LibraryOfTheWorld.Services
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true, WriteIndented = true });
                     return createdEntity;
                 }
-                else { NotificationService.ShowMessage(await response.Content.ReadAsStringAsync()); throw new Exception("no Customer Could be created"); }
-
+                else {throw new Exception("no Customer Could be created"); }
             }
             catch (Exception ex)
             {
-                NotificationService.ShowMessage($"Error posting Customers to API: {ex.Message}");
+                await _logger.LogError(ex,$"Error posting Customers to API: {ex.Message}");
                 return null;
             }
 
@@ -148,7 +148,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error fetching Authors from API: {ex.Message}");
+                await _logger.LogError(ex, $"Error fetching Authors from API: {ex.Message}");
                 return new List<Customer>();
             }
         }
@@ -178,7 +178,7 @@ namespace LibraryOfTheWorld.Services
                     return;
                 }
             }
-            catch (Exception ex) { NotificationService.ShowMessage(ex.Message); }
+            catch (Exception ex) { await _logger.LogError(ex, $"ERROR AT DELETEING CUSTOMER{ex.Message}"); }
         }
     }
 }

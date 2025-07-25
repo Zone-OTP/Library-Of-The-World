@@ -1,5 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
+using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Services
@@ -9,6 +10,7 @@ namespace LibraryApi.Services
         private static List<Customer> customerList;
         private static Random random = new Random();
         private readonly LibraryContext _context;
+        private readonly static ILoggerService _logger = new LoggerService("CustomerServiceBackEnd");
 
 
         public static async Task<List<Customer>> GetCustomers(LibraryContext _context)
@@ -44,7 +46,7 @@ namespace LibraryApi.Services
                 await MailingService.SendMailPostRegistration(customer.Email, customer.Name);
                 return true;
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
         //corw rjzi umka logq
 
@@ -84,7 +86,7 @@ namespace LibraryApi.Services
                     return false;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
 
         public static async Task<Customer> GetCustmoerByLibraryCard(int libraryCardNumber, LibraryContext _context)
@@ -105,7 +107,7 @@ namespace LibraryApi.Services
                 else { return false; }
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
 
         }
 

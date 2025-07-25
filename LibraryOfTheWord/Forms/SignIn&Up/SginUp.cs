@@ -1,4 +1,5 @@
-﻿using LibraryOfTheWorld.Services;
+﻿using LibraryErrorLogs;
+using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 
 namespace LibraryOfTheWorld
@@ -8,6 +9,7 @@ namespace LibraryOfTheWorld
 
 
         private static SignUp instance;
+        private readonly ILoggerService _logger;
         public static SignUp Instance
         {
             get
@@ -21,6 +23,7 @@ namespace LibraryOfTheWorld
         public SignUp()
         {
             InitializeComponent();
+            _logger = new LoggerService("SignUp");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,13 +59,14 @@ namespace LibraryOfTheWorld
                         await CustomerService.AddCustomer(name, password, govId, email);
                         Signin.Instance.Show();
                         Signin.Instance.Location = this.Location;
+                        await _logger.LogInformation($"Someone Signed Up with name: {name}");
                         this.Hide();
                     }
-                    else { throw new Exception("Goverment Id is not correct"); }
+                    else { throw new Exception("Government Id is not correct"); }
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }
-            catch (Exception ex) { NotificationService.ShowMessage(ex.Message); }
+            catch (Exception ex) { await _logger.LogError(ex, "Error at Sign Up form : " + ex.Message); }
         }
 
         private void ShowUsersTest_Click(object sender, EventArgs e)

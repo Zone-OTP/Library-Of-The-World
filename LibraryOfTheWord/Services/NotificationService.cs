@@ -12,6 +12,7 @@ namespace LibraryOfTheWorld.Services
         {
             using (var dialog = new Form())
             {
+                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.Text = title;
                 dialog.Size = new Size(400, 200);
                 dialog.StartPosition = FormStartPosition.CenterParent;
@@ -50,6 +51,7 @@ namespace LibraryOfTheWorld.Services
         {
             using (var dialog = new Form())
             {
+                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.Text = title;
                 dialog.Size = new Size(400, 200);
                 dialog.StartPosition = FormStartPosition.CenterParent;

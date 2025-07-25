@@ -1,5 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
+using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,6 +11,7 @@ namespace LibraryApi.Services
     {
         private static List<Book> bookList;
         private readonly LibraryContext _context;
+        private readonly static ILoggerService _logger = new LoggerService("BookServiceBackEnd");
         public BookService()
         {
 
@@ -55,7 +57,7 @@ namespace LibraryApi.Services
                 }
                 else { return false; }
             }
-            catch (Exception ex) { Console.WriteLine($"{ex}"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"{ex.Message}"); return false; }
 
 
 
@@ -79,7 +81,7 @@ namespace LibraryApi.Services
                     return false;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
 
         public static async Task<bool> RemoveBookByRoot(int bookId, LibraryContext _context)
@@ -95,7 +97,7 @@ namespace LibraryApi.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error removing book: {ex.Message}");
+                await _logger.LogError(ex, $"Error removing book: {ex.Message}");
                 return false;
             }
         }
@@ -133,7 +135,7 @@ namespace LibraryApi.Services
                 }
                 else { return 0.0; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return 0.0; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return 0.0; }
         }
 
         public static async Task<bool> TakeBookOut(int bookId, int customerId, LibraryContext _context)
@@ -157,7 +159,7 @@ namespace LibraryApi.Services
                 else { return false; }
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
 
         public static async Task<bool> EditBook(int bookId, string bookNewName, int authorId, LibraryContext _context)
@@ -182,7 +184,7 @@ namespace LibraryApi.Services
                     return true;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); Console.WriteLine("EDITING ENDED"); ; return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); Console.WriteLine("EDITING ENDED"); ; return false; }
         }
         public static async Task<double> PayFine(int bookId, int customerId, LibraryContext _context)
         {
@@ -199,7 +201,7 @@ namespace LibraryApi.Services
                 }
                 else { return 0.0; }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return 0.0; }
+            catch (Exception ex) { await _logger.LogError(ex,ex.Message); return 0.0; }
         }
     }
 }
