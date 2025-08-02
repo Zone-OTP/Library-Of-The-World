@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\C#\\Library-Of-The-World\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\passwordresetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\passwordresetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|d:\\c#\\library-of-the-world\\libraryerrorlogs\\loggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|solutionrelative:libraryerrorlogs\\loggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|d:\\c#\\library-of-the-world\\libraryerrorlogs\\iloggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|solutionrelative:libraryerrorlogs\\iloggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\mailingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\mailingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\passwordresetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\passwordresetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\mailingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\mailingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +37,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\apis\\libraryapi\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0B12CE9-FDF5-C0EB-1216-3689CD41C129}|LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj|solutionrelative:libraryoftheword\\apis\\libraryapi\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\customerforms\\customerdisplayform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\libraryforadmins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\administrativeforms\\editbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\editbookform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -83,28 +95,16 @@
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\administrativeforms\\admincustomerdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\customerforms\\libraryforcustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\customerforms\\libraryforcustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\customerforms\\libraryforcustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sginup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\signin\u0026up\\sginup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sginup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|d:\\c#\\library-of-the-world\\libraryerrorlogs\\loggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|solutionrelative:libraryerrorlogs\\loggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|d:\\c#\\library-of-the-world\\libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|D:\\C#\\Library-Of-The-World\\libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{521C2BD7-2DA0-4B6C-B7F8-1E7863FE6D4E}|LibraryOfTheWord\\LibraryOfTheWorld.csproj|solutionrelative:libraryoftheword\\forms\\signin\u0026up\\sign in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|d:\\c#\\library-of-the-world\\libraryerrorlogs\\iloggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|solutionrelative:libraryerrorlogs\\iloggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E74A4BC0-3451-4052-A200-0D12E58AFA37}|LibraryErrorLogs\\LibraryErrorLogs.csproj|d:\\c#\\library-of-the-world\\libraryerrorlogs\\libraryerrorlogs.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -134,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 505,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,29 +154,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PasswordResetService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "AuthorService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwDYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:11:33.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T01:04:33.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MailingService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAowHcAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowC4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:10:32.628Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T01:04:11.704Z"
             },
             {
               "$type": "Document",
@@ -186,27 +184,78 @@
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CustomerService.cs",
               "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CustomerService.cs",
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CustomerService.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAmwG0AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAlwGkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T01:09:38.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CheckoutService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MailingService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAowHcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:08:23.075Z",
+              "WhenOpened": "2025-07-25T01:10:32.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PasswordResetService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T01:11:33.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "LoggerService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LoggerService.cs",
+              "RelativeDocumentMoniker": "LibraryErrorLogs\\LoggerService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LoggerService.cs",
+              "RelativeToolTip": "LibraryErrorLogs\\LoggerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T22:03:25.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ILoggerService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\ILoggerService.cs",
+              "RelativeDocumentMoniker": "LibraryErrorLogs\\ILoggerService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\ILoggerService.cs",
+              "RelativeToolTip": "LibraryErrorLogs\\ILoggerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T22:05:25.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sign in.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAtwC0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T22:39:51.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "BookService.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\BookService.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\BookService.cs",
@@ -214,38 +263,35 @@
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\BookService.cs",
               "ViewState": "AgIAAK8AAAAAAAAAAAAuwMkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:04:38.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T01:04:38.717Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AuthorService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AuthorService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwDYAAAAtAAAAAAAAAA==",
+              "Title": "CheckoutService.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\CheckoutService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:04:33.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T01:08:23.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\AdminService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowC4AAAARAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "LibraryForAdmins.cs",
+              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
+              "ViewState": "AgIAAOsAAAAAAAAAAAASwA0BAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T01:04:11.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:45:56.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\CustomerService.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\CustomerService.cs",
@@ -253,12 +299,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Services\\CustomerService.cs",
               "ViewState": "AgIAAKcAAAAAAAAAAAAQwLgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:59:34.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:59:34.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "BookService.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\BookService.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\BookService.cs",
@@ -266,12 +311,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Services\\BookService.cs",
               "ViewState": "AgIAAPgAAAAAAAAAAAAQwAUBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:52:47.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:52:47.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "AuthorService.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\AuthorService.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\AuthorService.cs",
@@ -279,12 +323,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Services\\AuthorService.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAhwBAAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:48:33.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:48:33.878Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "CustomerDisplayForm.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\CustomerForms\\CustomerDisplayForm.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\CustomerForms\\CustomerDisplayForm.cs",
@@ -292,25 +335,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\CustomerForms\\CustomerDisplayForm.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAQwCIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:48:19.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:48:19.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LibraryForAdmins.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\LibraryForAdmins.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:45:56.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "EditBookForm.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\EditBookForm.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\EditBookForm.cs",
@@ -318,12 +347,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\EditBookForm.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAAAEkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:38:10.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:38:10.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "CustomerCheckoutForm.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
@@ -331,12 +359,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\CustomerCheckoutForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAACSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:12:16.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:12:16.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "LibraryForCustomers.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs",
@@ -349,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "SginUp.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
@@ -362,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "AdminCustomerCheck.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs",
@@ -370,12 +397,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerCheck.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:07:02.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:07:02.166Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "AdminCustomerDisplay.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
@@ -383,12 +409,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AdminCustomerDisplay.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAQwIUAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:07:08.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:07:08.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "AddBookForm.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs",
@@ -396,12 +421,11 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\AdministrativeForms\\AddBookForm.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:06:37.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:06:37.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Services\\NotificationService.cs",
@@ -409,33 +433,30 @@
               "RelativeToolTip": "LibraryOfTheWord\\Services\\NotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:03:20.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T00:03:20.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "LibraryForCustomers.cs [Design]",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs",
               "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs [Design]",
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\CustomerForms\\LibraryForCustomers.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T00:00:44.07Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-25T00:00:44.07Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
-              "Title": "LibraryErrorLogs",
+              "Title": "LibraryErrorLogs.csproj",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj",
               "RelativeDocumentMoniker": "LibraryErrorLogs\\LibraryErrorLogs.csproj",
               "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj",
               "RelativeToolTip": "LibraryErrorLogs\\LibraryErrorLogs.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-24T23:02:20.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T23:02:20.035Z"
             },
             {
               "$type": "Document",
@@ -447,59 +468,18 @@
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Models\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T22:59:04.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T22:59:04.647Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Sign in.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
-              "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
-              "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAqwDIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T22:39:51.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Sign in.cs [Design]",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs",
               "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs [Design]",
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\Sign in.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T22:39:49.636Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ILoggerService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\ILoggerService.cs",
-              "RelativeDocumentMoniker": "LibraryErrorLogs\\ILoggerService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\ILoggerService.cs",
-              "RelativeToolTip": "LibraryErrorLogs\\ILoggerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T22:05:25.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "LoggerService.cs",
-              "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LoggerService.cs",
-              "RelativeDocumentMoniker": "LibraryErrorLogs\\LoggerService.cs",
-              "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryErrorLogs\\LoggerService.cs",
-              "RelativeToolTip": "LibraryErrorLogs\\LoggerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T22:03:25.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T22:39:49.636Z"
             },
             {
               "$type": "Document",
@@ -511,20 +491,18 @@
               "RelativeToolTip": "LibraryOfTheWord\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T21:15:38.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T21:15:38.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "SginUp.cs [Design]",
               "DocumentMoniker": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs",
               "ToolTip": "D:\\C#\\Library-Of-The-World\\LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs [Design]",
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T21:13:04.652Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-24T21:13:04.652Z"
             },
             {
               "$type": "Document",
@@ -536,8 +514,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\Forms\\SignIn\u0026Up\\SginUp.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T20:24:37.875Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T20:24:37.875Z"
             },
             {
               "$type": "Document",
@@ -549,8 +526,7 @@
               "RelativeToolTip": "Classes\u0026ModelLibrary\\Classes\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T20:16:29.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T20:16:29.283Z"
             }
           ]
         }

@@ -100,6 +100,7 @@ namespace LibraryApi.Services
             try
             {
                 var customer = await GetCustomerByName(cust.Name, _context);
+                if (customer == null) return false;
                 if (await _context.Customers.AnyAsync(c => c.Name == customer.Name && c.Password == customer.Password))
                 {
                     return true;

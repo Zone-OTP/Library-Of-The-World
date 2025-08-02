@@ -65,7 +65,7 @@ namespace LibraryOfTheWorld
                         Application.DoEvents();
                         this.Hide();
                     }
-                    else { throw new Exception("name or password is incorrect"); }
+                    else { NotificationService.ShowMessage("name or Password is incorrect"); throw new Exception("name or password is incorrect"); }
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }
