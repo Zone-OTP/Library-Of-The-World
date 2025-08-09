@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace LibraryOfTheWorld.Services
 {
-    public class NotificationService
+    internal class NotificationService
     {
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 

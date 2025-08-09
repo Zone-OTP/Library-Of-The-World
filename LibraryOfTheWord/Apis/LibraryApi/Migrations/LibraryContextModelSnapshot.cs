@@ -41,6 +41,14 @@ namespace LibraryApi.Migrations
                     b.HasKey("AdminId");
 
                     b.ToTable("Admins");
+
+                    b.HasData(
+                        new
+                        {
+                            AdminId = 1,
+                            Name = "admin",
+                            Password = "admin"
+                        });
                 });
 
             modelBuilder.Entity("LibraryApi.Models.Author", b =>
@@ -139,10 +147,10 @@ namespace LibraryApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PersonalGovermentId")
+                    b.Property<string>("PersonalGovernmentId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("PersonalGovermentID");
+                        .HasColumnName("PersonalGovernmentID");
 
                     b.HasKey("CustomerId");
 

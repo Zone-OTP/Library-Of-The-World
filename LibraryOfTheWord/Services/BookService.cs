@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 namespace LibraryOfTheWorld.Services
 {
 
-    public class BookService
+    internal class BookService
     {
         private static List<Book> bookList;
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };

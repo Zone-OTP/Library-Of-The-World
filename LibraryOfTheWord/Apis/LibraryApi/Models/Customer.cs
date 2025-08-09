@@ -9,7 +9,7 @@ public partial class Customer
 
     public string Name { get; set; } = null!;
 
-    public string PersonalGovermentId { get; set; } = null!;
+    public string PersonalGovernmentId { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 

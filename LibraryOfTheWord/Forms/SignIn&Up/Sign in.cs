@@ -41,7 +41,9 @@ namespace LibraryOfTheWorld
             {
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
                 {
-                    if (await AdminService.SignInCheck(name, password))
+                    var user = await ValidationService.SignInValidation(name, password);
+                    
+                    if (user != null && user.IsAdmin)
                     {
                         await _logger.LogInformation($"Admin has Signed in Name of {name}");
                         LibraryForAdmins.Instance.currentUser = name;
@@ -52,11 +54,11 @@ namespace LibraryOfTheWorld
                         PasswordTextBox.Text = "";
                         this.Hide();
                     }
-                    else if (await CustomerService.ValidateLoginAsync(name, password))
+                    else if (user != null && !user.IsAdmin)
                     {
                         await _logger.LogInformation($"Customer has Signed in Name of {name}");
                         var customer = await CustomerService.GetCustomerByNameAsync(name);
-                        LibraryForCustomers.Instance.currentUser = customer;
+                        LibraryForCustomers.Instance.currentUser = user;
                         LibraryForCustomers.Instance.Show();
                         LibraryForCustomers.Instance.Location = this.Location;
                         NameTextBox.Text = "";
