@@ -1,6 +1,6 @@
 ﻿using LibraryApi.Data;
-using LibraryApi.Models;
 using LibraryApi.Services;
+using LibraryApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryApi.Controllers

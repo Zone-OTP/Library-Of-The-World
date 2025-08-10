@@ -1,14 +1,13 @@
 ﻿using System.Text;
 using System.Text.Json;
-using LibraryOfTheWorld.Classes;
-using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfClasses.Classes;
+using LibraryOfTheWorld.Services;
 
 namespace LibraryOfTheWorld.Services
 {
     public class CustomerService
     {
         private static List<Customer> customerList;
-        private static DataHandler dataHandler;
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
         static CustomerService()
@@ -111,7 +110,7 @@ namespace LibraryOfTheWorld.Services
         public static async Task PayFineAsync(int bookId, int customerId)
         {
             var book = await BookService.GetBookById(bookId);
-            var monthsPassed = CheckoutService.CheckDateAndSetPayment(customerId, book.BookId);
+            var monthsPassed = await CheckoutService.CheckDateAndSetPayment(customerId, book.BookId);
 
             if (monthsPassed > 0)
             {

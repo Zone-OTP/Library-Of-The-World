@@ -1,13 +1,13 @@
 ﻿using System.Text;
 using System.Text.Json;
-using LibraryOfTheWorld.Classes;
-using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfClasses.Classes;
+
 
 namespace LibraryOfTheWorld.Services
 {
     public class AdminService
     {
-        private static DataHandler dataHandler = new DataHandler();
+       
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
         static AdminService()
@@ -28,7 +28,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                NotificationService.ShowMessage($"Exeption thrown {ex}");
+                Console.WriteLine($"Exception thrown {ex}");
                 return false;
             }
         }

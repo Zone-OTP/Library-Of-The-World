@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryApi.Models;
 
 public partial class Admin
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Key]
     public int AdminId { get; set; }
 
     public string Name { get; set; } = null!;

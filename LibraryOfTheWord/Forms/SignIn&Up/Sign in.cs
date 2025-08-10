@@ -53,11 +53,13 @@ namespace LibraryOfTheWorld
                     else if (await CustomerService.ValidateLoginAsync(name, password))
                     {
                         NotificationService.ShowMessage("you have signed in");
-                        LibraryForCustomers.Instance.currentUser = await CustomerService.GetCustomerByNameAsync(name);
+                        var customer = await CustomerService.GetCustomerByNameAsync(name);
+                        LibraryForCustomers.Instance.currentUser = customer;
                         LibraryForCustomers.Instance.Show();
                         LibraryForCustomers.Instance.Location = this.Location;
                         NameTextBox.Text = "";
                         PasswordTextBox.Text = "";
+                        NotificationService.MailNotifySignIn(customer);
                         Application.DoEvents();
                         this.Hide();
                     }

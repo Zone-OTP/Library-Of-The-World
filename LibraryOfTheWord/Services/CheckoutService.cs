@@ -1,25 +1,19 @@
 ﻿using System.Text.Json;
-using LibraryOfTheWorld.Classes;
-using LibraryOfTheWorld.DattaHandlers;
+using LibraryOfClasses.Classes;
+using LibraryOfClasses.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
     public static class CheckoutService
     {
         private static List<BookCheckout> checkoutList;
-        private static readonly DataHandler dataHandler = new DataHandler();
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
-        public static void RemoveCheckOut(int checkoutId)
+
+
+        public static async Task<double> CheckDateAndSetPayment(int customerId, int bookId)
         {
-            dataHandler.RemoveFromDatabase<BookCheckout>(checkoutId);
-
-        }
-
-
-        public static double CheckDateAndSetPayment(int customerId, int bookId)
-        {
-            var checkouts = dataHandler.LoadFromDatabase<BookCheckout>();
+            var checkouts = await LoadCheckouts();
 
             foreach (var checkout in checkouts)
             {
@@ -95,7 +89,6 @@ namespace LibraryOfTheWorld.Services
                 .Where(c => c.BookCheckouts.Any(bc => bc.BookId == bookId))
                 .ToList();
         }
-
 
     }
 }

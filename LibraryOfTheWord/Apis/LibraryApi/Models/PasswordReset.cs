@@ -1,12 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryApi.Models;
 
-public class PasswordReset
+public partial class PasswordReset
 {
-    [Key]
     public int PasswordResetId { get; set; }
-    public int CustomerId { get; set; }
-    public string Token { get; set; }
+
+    public string Token { get; set; } = null!;
+
     public DateTime ExpiresAt { get; set; }
+
+    public int CustomerId { get; set; }
+
+    public virtual Customer Customer { get; set; } = null!;
 }

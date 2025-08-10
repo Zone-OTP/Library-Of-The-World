@@ -1,4 +1,4 @@
-﻿using LibraryOfTheWorld.Classes;
+﻿using LibraryOfClasses.Classes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 

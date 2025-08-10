@@ -1,23 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LibraryApi.Models;
 
 public partial class Book
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Key]
     public int BookId { get; set; }
 
-    [Required]
     public string Name { get; set; } = null!;
 
-    [Required]
     public int AuthorId { get; set; }
 
-    [Required]
     public int AmountInLibrary { get; set; }
 
-    [Required]
     public int TotalAmountInLibrary { get; set; }
+
+    public virtual Author Author { get; set; } = null!;
+
+    public virtual ICollection<BookCheckout> BookCheckouts { get; set; } = new List<BookCheckout>();
 }

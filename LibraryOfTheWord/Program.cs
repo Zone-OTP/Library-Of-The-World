@@ -1,5 +1,4 @@
-﻿using LibraryOfTheWorld.DBData;
-using LibraryOfTheWorld.Forms;
+﻿using LibraryOfTheWorld.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,15 +17,12 @@ namespace LibraryOfTheWorld
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //var serviceProvider = new ServiceCollection()
-            //    .AddDbContext<LibraryContext>(options =>
-            //        options.UseSqlServer("Server=DESKTOP-LTO7H71;Database=LIbraryDb;Trusted_Connection=True;"))
-            //    .BuildServiceProvider();
+
 
             Application.Run(new SignUp());
 
             var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
+
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
             using (var scope = serviceProvider.CreateScope())
@@ -36,20 +32,6 @@ namespace LibraryOfTheWorld
             }
         }
 
-        private static void ConfigureServices(ServiceCollection services)
-        {
-            services.AddDbContext<LibraryContext>(options =>
-                options.UseSqlServer("Server=DESKTOP-LTO7H71;Database=LIbraryDb;Trusted_Connection=True;TrustServerCertificate=True;"));
 
-            services.AddScoped<SignUp>();
-            services.AddScoped<Signin>();
-            services.AddScoped<AddBookForm>();
-            services.AddScoped<EditBookForm>();
-            services.AddScoped<LibraryForAdmins>();
-            services.AddScoped<LibraryForCustomers>();
-
-            //services.AddScoped<IuserDataHandlerJson, DataHandler>();
-
-        }
     }
 }

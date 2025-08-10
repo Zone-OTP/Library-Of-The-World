@@ -16,7 +16,6 @@ namespace LibraryApi.Services
         private static bool _isInitialized = false;
 
 
-
         public AdminService(LibraryContext context)
         {
             _context = context;
