@@ -12,7 +12,6 @@ namespace LibraryOfTheWorld.Services
         {
             using (var dialog = new Form())
             {
-                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.Text = title;
                 dialog.Size = new Size(400, 200);
                 dialog.StartPosition = FormStartPosition.CenterParent;
@@ -42,7 +41,9 @@ namespace LibraryOfTheWorld.Services
                 dialog.Controls.Add(label);
                 dialog.Controls.Add(okButton);
                 dialog.AcceptButton = okButton;
+                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.ShowDialog();
+
             }
 
 
@@ -51,7 +52,6 @@ namespace LibraryOfTheWorld.Services
         {
             using (var dialog = new Form())
             {
-                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.Text = title;
                 dialog.Size = new Size(400, 200);
                 dialog.StartPosition = FormStartPosition.CenterParent;
@@ -89,7 +89,7 @@ namespace LibraryOfTheWorld.Services
                 dialog.Controls.Add(yesButton);
                 dialog.AcceptButton = yesButton;
                 dialog.Controls.Add(noButton);
-
+                Themes.ThemeManager.ApplyTheme(dialog);
                 return dialog.ShowDialog();
             }
 
