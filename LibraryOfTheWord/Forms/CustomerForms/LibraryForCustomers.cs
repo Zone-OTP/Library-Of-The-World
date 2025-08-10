@@ -1,7 +1,10 @@
-﻿using LibraryOfClasses.Classes;
+﻿using Classes_ModelLibrary.VeiwModes;
+using LibraryErrorLogs;
+using LibraryOfClasses.Classes;
+using LibraryOfClasses.VeiwModes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-using LibraryOfClasses.VeiwModes;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Reflection;
 
 
@@ -10,12 +13,14 @@ namespace LibraryOfTheWorld.Forms
 {
     public partial class LibraryForCustomers : Form
     {
+        private readonly ILoggerService _logger;
         public LibraryForCustomers()
         {
             InitializeComponent();
+            _logger = new LoggerService("LibraryForCustomers");
         }
         private static LibraryForCustomers instance;
-        public Customer currentUser;
+        public UserVeiwModel currentUser;
         private List<BookViewModel> bookViewModels;
         public static LibraryForCustomers Instance
         {

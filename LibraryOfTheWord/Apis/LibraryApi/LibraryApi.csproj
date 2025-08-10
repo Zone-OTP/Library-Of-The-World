@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Classes&amp;ModelLibrary\Classes&amp;ServicesLibrary.csproj" />
+    <ProjectReference Include="..\..\..\LibraryErrorLogs\LibraryErrorLogs.csproj" />
   </ItemGroup>
 
 </Project>

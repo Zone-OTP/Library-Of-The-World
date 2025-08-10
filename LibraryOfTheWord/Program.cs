@@ -1,6 +1,7 @@
 ﻿using LibraryOfTheWorld.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.Logging;
 
 namespace LibraryOfTheWorld
 {
@@ -18,20 +19,7 @@ namespace LibraryOfTheWorld
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-
             Application.Run(new SignUp());
-
-            var serviceCollection = new ServiceCollection();
-
-            var serviceProvider = serviceCollection.BuildServiceProvider();
-
-            using (var scope = serviceProvider.CreateScope())
-            {
-                var signUpForm = scope.ServiceProvider.GetRequiredService<SignUp>();
-                Application.Run(signUpForm);
-            }
         }
-
-
     }
 }

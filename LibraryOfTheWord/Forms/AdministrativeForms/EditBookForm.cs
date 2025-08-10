@@ -2,6 +2,7 @@
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 using LibraryOfClasses.VeiwModes;
+using LibraryErrorLogs;
 
 namespace LibraryOfTheWorld.Forms
 {
@@ -9,6 +10,7 @@ namespace LibraryOfTheWorld.Forms
     {
         private BookViewModel _book;
         private Author _author;
+        private readonly ILoggerService _logger;
         public EditBookForm()
         {
             InitializeComponent();
@@ -17,12 +19,14 @@ namespace LibraryOfTheWorld.Forms
         {
             InitializeComponent();
             _book = book;
+            _logger = new LoggerService("EditBookForm");
             BookTitleTextBox.Text = _book.Name;
+            
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)
         {
-
+            var pervAuthId = _book.AuthorId;
             if (!await AuthorService.DoesAuthorExists(AuthorEditComboBox.Text))
             {
                 var author = await AuthorService.AddAuthor(AuthorEditComboBox.Text);
@@ -36,7 +40,7 @@ namespace LibraryOfTheWorld.Forms
             _author = await AuthorService.GetAuthorByName(AuthorEditComboBox.Text);
             if (await BookService.EditBook(_book.BookId, BookTitleTextBox.Text, _author.AuthorId))
             {
-                NotificationService.ShowMessage("Book Has Been Edited Correctly");
+                await _logger.LogInformation($"A book was Edited From{_book.Name} to {BookTitleTextBox.Text}, and {pervAuthId} to {_author.AuthorId}");
                 this.Close();
             }
 

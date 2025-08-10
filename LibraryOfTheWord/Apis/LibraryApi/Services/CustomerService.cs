@@ -1,5 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
+using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Services
@@ -9,6 +10,7 @@ namespace LibraryApi.Services
         private static List<Customer> customerList;
         private static Random random = new Random();
         private readonly LibraryContext _context;
+        private readonly static ILoggerService _logger = new LoggerService("CustomerServiceBackEnd");
 
 
         public static async Task<List<Customer>> GetCustomers(LibraryContext _context)
@@ -28,7 +30,7 @@ namespace LibraryApi.Services
         public static async Task<bool> CheckCustomerData(Customer customer, LibraryContext _context)
         {
             var custcheck = await _context.Customers.AnyAsync(c => c.Name == customer.Name);
-            var custcheck2 = await _context.Customers.AnyAsync(c => c.PersonalGovermentId == customer.PersonalGovermentId);
+            var custcheck2 = await _context.Customers.AnyAsync(c => c.PersonalGovernmentId == customer.PersonalGovernmentId);
             var custcheck3 = await _context.Customers.AnyAsync(c => c.Email == customer.Email);
             if (custcheck || custcheck2 || custcheck3) { return true; } else { return false; }
         }
@@ -44,9 +46,8 @@ namespace LibraryApi.Services
                 await MailingService.SendMailPostRegistration(customer.Email, customer.Name);
                 return true;
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
-        //corw rjzi umka logq
 
         public static async Task<int> GenerateUniqueLibraryCardNumber(LibraryContext _context)
         {
@@ -84,10 +85,10 @@ namespace LibraryApi.Services
                     return false;
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
 
-        public static async Task<Customer> GetCustmoerByLibraryCard(int libraryCardNumber, LibraryContext _context)
+        public static async Task<Customer> GetCustomerByLibraryCard(int libraryCardNumber, LibraryContext _context)
         {
             return await _context.Customers.FirstOrDefaultAsync(c => c.LibraryCardNumber == libraryCardNumber);
         }
@@ -98,6 +99,7 @@ namespace LibraryApi.Services
             try
             {
                 var customer = await GetCustomerByName(cust.Name, _context);
+                if (customer == null) return false;
                 if (await _context.Customers.AnyAsync(c => c.Name == customer.Name && c.Password == customer.Password))
                 {
                     return true;
@@ -105,7 +107,7 @@ namespace LibraryApi.Services
                 else { return false; }
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
 
         }
 

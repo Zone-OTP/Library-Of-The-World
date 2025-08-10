@@ -1,7 +1,7 @@
 ﻿using LibraryOfTheWorld.Forms;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-
+using LibraryErrorLogs;
 
 namespace LibraryOfTheWorld
 {
@@ -9,6 +9,7 @@ namespace LibraryOfTheWorld
     {
 
         private static Signin instance;
+        private readonly ILoggerService _logger;
         public static Signin Instance
         {
             get
@@ -21,6 +22,7 @@ namespace LibraryOfTheWorld
         public Signin()
         {
             InitializeComponent();
+            _logger = new LoggerService("Signin");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,9 +41,11 @@ namespace LibraryOfTheWorld
             {
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
                 {
-                    if (await AdminService.SignInCheck(name, password))
+                    var user = await ValidationService.SignInValidation(name, password);
+                    
+                    if (user != null && user.IsAdmin)
                     {
-                        NotificationService.ShowMessage("you have signed in as an Admin");
+                        await _logger.LogInformation($"Admin has Signed in Name of {name}");
                         LibraryForAdmins.Instance.currentUser = name;
                         LibraryForAdmins.Instance.Show();
                         Application.DoEvents();
@@ -50,24 +54,24 @@ namespace LibraryOfTheWorld
                         PasswordTextBox.Text = "";
                         this.Hide();
                     }
-                    else if (await CustomerService.ValidateLoginAsync(name, password))
+                    else if (user != null && !user.IsAdmin)
                     {
-                        NotificationService.ShowMessage("you have signed in");
+                        await _logger.LogInformation($"Customer has Signed in Name of {name}");
                         var customer = await CustomerService.GetCustomerByNameAsync(name);
-                        LibraryForCustomers.Instance.currentUser = customer;
+                        LibraryForCustomers.Instance.currentUser = user;
                         LibraryForCustomers.Instance.Show();
                         LibraryForCustomers.Instance.Location = this.Location;
                         NameTextBox.Text = "";
                         PasswordTextBox.Text = "";
-                        NotificationService.MailNotifySignIn(customer);
+                        await NotificationService.MailNotifySignIn(customer);
                         Application.DoEvents();
                         this.Hide();
                     }
-                    else { throw new Exception("name or password is incorrect"); }
+                    else { NotificationService.ShowMessage("name or Password is incorrect"); throw new Exception("name or password is incorrect"); }
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }
-            catch (Exception ex) { NotificationService.ShowMessage(ex.Message); }
+            catch (Exception ex) { await _logger.LogError(ex,"Error at SignIn"+ex.Message); }
         }
 
         private void Switch_Click(object sender, EventArgs e)

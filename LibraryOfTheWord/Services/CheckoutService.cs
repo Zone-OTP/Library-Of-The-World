@@ -4,7 +4,7 @@ using LibraryOfClasses.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
-    public static class CheckoutService
+    internal static class CheckoutService
     {
         private static List<BookCheckout> checkoutList;
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };

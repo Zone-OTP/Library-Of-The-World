@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LibraryApi.Migrations
 {
     /// <inheritdoc />
-    public partial class ReInitalMigration : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,7 +45,7 @@ namespace LibraryApi.Migrations
                     CustomerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PersonalGovermentID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PersonalGovernmentID = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LibraryCardNumber = table.Column<int>(type: "int", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false, defaultValue: "")
@@ -124,6 +124,11 @@ namespace LibraryApi.Migrations
                         principalColumn: "CustomerId",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Admins",
+                columns: new[] { "AdminId", "Name", "Password" },
+                values: new object[] { 1, "admin", "admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookCheckouts_BookId",

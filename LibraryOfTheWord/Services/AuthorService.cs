@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
 using LibraryOfClasses.VeiwModes;
 
@@ -7,13 +8,13 @@ using LibraryOfClasses.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
-    public class AuthorService
+    internal class AuthorService
     {
 
         
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
         private static List<Author> authorList;
-
+        private static readonly ILoggerService _logger = new LoggerService("AuthorServiceFrontEnd");
         static AuthorService()
         {
         }
@@ -118,7 +119,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                NotificationService.ShowMessage($"Exeption thrown {ex}");
+                _logger.LogError(ex, "Error at Author Serivece" + ex.Message);
                 return null;
             }
         }
@@ -146,7 +147,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                NotificationService.ShowMessage($"Exeption thrown {ex}");
+                await _logger.LogError(ex, "Error at Author Service" + ex.Message);
                 return 0;
             }
         }

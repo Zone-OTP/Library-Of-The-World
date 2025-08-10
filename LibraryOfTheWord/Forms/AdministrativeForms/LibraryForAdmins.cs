@@ -2,6 +2,8 @@
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 using LibraryOfClasses.VeiwModes;
+using System.Threading.Tasks;
+using LibraryErrorLogs;
 
 
 namespace LibraryOfTheWorld.Forms
@@ -9,9 +11,11 @@ namespace LibraryOfTheWorld.Forms
     public partial class LibraryForAdmins : Form
     {
         public string currentUser;
+        private readonly ILoggerService _logger;
         public LibraryForAdmins()
         {
             InitializeComponent();
+            _logger = new LoggerService("LibraryForAdmins");
             this.DoubleBuffered = true;
 
         }
@@ -244,7 +248,7 @@ namespace LibraryOfTheWorld.Forms
         {
         }
 
-        private void BookGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void BookGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && BookGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {

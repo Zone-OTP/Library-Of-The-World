@@ -1,10 +1,12 @@
-﻿using System.Net;
+﻿using LibraryErrorLogs;
+using System.Net;
 using System.Net.Mail;
 
 namespace LibraryApi.Services
 {
     public class MailingService
     {
+        private readonly static ILoggerService _logger = new LoggerService("MailingServiceBackEnd");
         public static async Task<bool> SendMailPostRegistration(string customerEmail, string customerName)
         {
             try
@@ -39,7 +41,7 @@ namespace LibraryApi.Services
                 }
                 return true;
             }
-            catch (Exception ex) { Console.WriteLine($"Error Thrown at Mail Delivery{ex}"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"Error Thrown at Mail Delivery{ex.Message}"); return false; }
         }
         public static async Task<bool> SendMailPostSginIn(string customerEmail, string customerName)
         {
@@ -74,7 +76,7 @@ namespace LibraryApi.Services
                 }
                 return true;
             }
-            catch (Exception ex) { Console.WriteLine($"Error Thrown at Mail Delivery{ex}"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"Error Thrown at Mail Delivery{ex}"); return false; }
         }
 
         public static async Task<bool> SendMailToResetPassword(string customerEmail, string resetLink)
@@ -115,7 +117,7 @@ namespace LibraryApi.Services
                 }
                 return true;
             }
-            catch (Exception ex) { Console.WriteLine($"Error Thrown at Mail Delivery{ex}"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"Error Thrown at Mail Delivery{ex}"); return false; }
         }
     }
 }

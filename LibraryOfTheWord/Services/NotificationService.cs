@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace LibraryOfTheWorld.Services
 {
-    public class NotificationService
+    internal class NotificationService
     {
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
 
@@ -41,7 +41,9 @@ namespace LibraryOfTheWorld.Services
                 dialog.Controls.Add(label);
                 dialog.Controls.Add(okButton);
                 dialog.AcceptButton = okButton;
+                Themes.ThemeManager.ApplyTheme(dialog);
                 dialog.ShowDialog();
+
             }
 
 
@@ -87,7 +89,7 @@ namespace LibraryOfTheWorld.Services
                 dialog.Controls.Add(yesButton);
                 dialog.AcceptButton = yesButton;
                 dialog.Controls.Add(noButton);
-
+                Themes.ThemeManager.ApplyTheme(dialog);
                 return dialog.ShowDialog();
             }
 

@@ -28,12 +28,19 @@ public partial class LibraryContext : DbContext
 
     public virtual DbSet<PasswordReset> PasswordResets { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-LTO7H71;Database=LibraryDb;Trusted_Connection=True;TrustServerCertificate=True;");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Admin>().HasData(
+                new Admin
+                {
+                    AdminId = 1, 
+                    Name = "admin",
+                    Password = "admin"
+                }
+            );
         modelBuilder.Entity<Book>(entity =>
         {
             entity.HasIndex(e => e.AuthorId, "IX_Books_AuthorId");
@@ -55,7 +62,7 @@ public partial class LibraryContext : DbContext
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.Property(e => e.Email).HasDefaultValue("");
-            entity.Property(e => e.PersonalGovermentId).HasColumnName("PersonalGovermentID");
+            entity.Property(e => e.PersonalGovernmentId).HasColumnName("PersonalGovernmentID");
         });
 
         modelBuilder.Entity<PasswordReset>(entity =>

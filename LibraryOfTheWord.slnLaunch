@@ -5,7 +5,7 @@
       {
         "Path": "LibraryOfTheWord\\LibraryOfTheWorld.csproj",
         "Action": "Start",
-        "DebugTarget": "LibraryOfTheWord"
+        "DebugTarget": "LibraryOfTheWorld"
       },
       {
         "Path": "LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj",

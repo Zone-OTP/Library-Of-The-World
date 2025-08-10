@@ -1,5 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
+using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -8,6 +9,7 @@ namespace LibraryApi.Services
     public class CheckoutService
     {
         private readonly LibraryContext _context;
+        private readonly static ILoggerService _logger = new LoggerService("CheckoutServiceBackEnd");
 
         //get
         public static async Task<List<BookCheckout>> GetCheckouts(LibraryContext _context)
@@ -32,7 +34,7 @@ namespace LibraryApi.Services
                 return true;
 
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
 
         }
 
@@ -51,7 +53,7 @@ namespace LibraryApi.Services
                 }
                 else { return false; }
             }
-            catch (Exception ex) { Console.WriteLine("Error removing checkout"); return false; }
+            catch (Exception ex) { await _logger.LogError(ex, $"Error removing checkout : {ex.Message}"); return false; }
         }
 
         public static async Task RemoveBookCheckoutsByBookId(int bookId, LibraryContext _context)

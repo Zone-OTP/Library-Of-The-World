@@ -1,5 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
+using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Services
@@ -8,7 +9,7 @@ namespace LibraryApi.Services
     {
         private static List<Author> authorList;
         private readonly LibraryContext _context;
-
+        private readonly static ILoggerService _logger = new LoggerService("AuthorServiceBackEnd");
 
         public AuthorService(LibraryContext context)
         {
@@ -40,18 +41,18 @@ namespace LibraryApi.Services
                     author.AuthorId = 0;
                     await _context.Authors.AddAsync(author);
                     await _context.SaveChangesAsync();
-                    Console.WriteLine($"Author '{author.Name}' added successfully.");
+                    await _logger.LogInformation($"Author '{author.Name}' added successfully.");
                     return true;
                 }
                 catch (DbUpdateException ex)
                 {
-                    Console.WriteLine($"Error adding author: {ex.Message}");
+                    await _logger.LogError(ex, $"Error adding author: {ex.Message}");
                     return false;
                 }
             }
             else
             {
-                Console.WriteLine($"Author '{author.Name}' already exists.");
+                await _logger.LogInformation($"Author '{author.Name}' already exists.");
                 return false;
             }
 

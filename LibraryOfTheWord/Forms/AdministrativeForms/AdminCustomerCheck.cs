@@ -33,7 +33,7 @@ namespace LibraryOfTheWorld.Forms
             LibraryCardOfCustomer.Text = Convert.ToString(_customer.LibraryCardNumber);
             NameOfCustomer.Text = _customer.Name;
             EmailOfCustomer.Text = _customer.Email;
-            GovermentIdOfCustomer.Text = _customer.PersonalGovermentID;
+            GovermentIdOfCustomer.Text = _customer.PersonalGovernmentID;
             IdOfCustomer.Text = Convert.ToString(_customer.CustomerId);
         }
     }
