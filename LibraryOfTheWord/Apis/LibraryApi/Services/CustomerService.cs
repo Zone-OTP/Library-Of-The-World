@@ -30,7 +30,7 @@ namespace LibraryApi.Services
         public static async Task<bool> CheckCustomerData(Customer customer, LibraryContext _context)
         {
             var custcheck = await _context.Customers.AnyAsync(c => c.Name == customer.Name);
-            var custcheck2 = await _context.Customers.AnyAsync(c => c.PersonalGovermentId == customer.PersonalGovermentId);
+            var custcheck2 = await _context.Customers.AnyAsync(c => c.PersonalGovernmentId == customer.PersonalGovernmentId);
             var custcheck3 = await _context.Customers.AnyAsync(c => c.Email == customer.Email);
             if (custcheck || custcheck2 || custcheck3) { return true; } else { return false; }
         }
@@ -48,7 +48,6 @@ namespace LibraryApi.Services
             }
             catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
-        //corw rjzi umka logq
 
         public static async Task<int> GenerateUniqueLibraryCardNumber(LibraryContext _context)
         {
@@ -89,7 +88,7 @@ namespace LibraryApi.Services
             catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
 
-        public static async Task<Customer> GetCustmoerByLibraryCard(int libraryCardNumber, LibraryContext _context)
+        public static async Task<Customer> GetCustomerByLibraryCard(int libraryCardNumber, LibraryContext _context)
         {
             return await _context.Customers.FirstOrDefaultAsync(c => c.LibraryCardNumber == libraryCardNumber);
         }

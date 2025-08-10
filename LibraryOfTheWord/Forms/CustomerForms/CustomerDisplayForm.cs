@@ -1,4 +1,5 @@
-﻿using LibraryOfClasses.Classes;
+﻿using Classes_ModelLibrary.VeiwModes;
+using LibraryOfClasses.Classes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
 using System.Text;
@@ -8,8 +9,8 @@ namespace LibraryOfTheWorld.Forms
 {
     public partial class CustomerDisplayForm : Form
     {
-        private Customer _customer;
-        public CustomerDisplayForm(Customer customer)
+        private UserVeiwModel _customer;
+        public CustomerDisplayForm(UserVeiwModel customer)
         {
             InitializeComponent();
             _customer = customer;
@@ -21,7 +22,7 @@ namespace LibraryOfTheWorld.Forms
             LibraryCardOfCustomer.Text = Convert.ToString(_customer.LibraryCardNumber);
             NameOfCustomer.Text = _customer.Name;
             EmailOfCustomer.Text = _customer.Email;
-            GovermentIdOfCustomer.Text = _customer.PersonalGovermentID;
+            GovermentIdOfCustomer.Text = _customer.PersonalGovernmentId;
             IdOfCustomer.Text = Convert.ToString(_customer.CustomerId);
         }
 

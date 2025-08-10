@@ -1,8 +1,10 @@
-﻿using LibraryErrorLogs;
+﻿using Classes_ModelLibrary.VeiwModes;
+using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
 using LibraryOfClasses.VeiwModes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Reflection;
 
 
@@ -18,7 +20,7 @@ namespace LibraryOfTheWorld.Forms
             _logger = new LoggerService("LibraryForCustomers");
         }
         private static LibraryForCustomers instance;
-        public Customer currentUser;
+        public UserVeiwModel currentUser;
         private List<BookViewModel> bookViewModels;
         public static LibraryForCustomers Instance
         {

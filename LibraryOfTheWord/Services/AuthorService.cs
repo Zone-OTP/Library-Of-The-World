@@ -8,7 +8,7 @@ using LibraryOfClasses.VeiwModes;
 
 namespace LibraryOfTheWorld.Services
 {
-    public class AuthorService
+    internal class AuthorService
     {
 
         

@@ -79,17 +79,17 @@ namespace LibraryOfTheWorld.Services
             }
         }
 
-        public static async Task<Customer> AddCustomer(string name, string password, string govermentId, string email)
+        public static async Task<Customer> AddCustomer(string name, string password, string governmentId, string email)
         {
             var endpoint = $"/api/customers";
-            Customer customer = new Customer(name, password, govermentId, email);
+            Customer customer = new Customer(name, password, governmentId, email);
             try
             {
                 string jsonCustomer = JsonSerializer.Serialize(customer);
                 var content = new StringContent(jsonCustomer, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await client.PostAsync(endpoint, content);
-                if (response.IsSuccessStatusCode)
+                 if (response.IsSuccessStatusCode)
                 {
                     NotificationService.ShowMessage(await response.Content.ReadAsStringAsync());
                     string responseJson = await response.Content.ReadAsStringAsync();
@@ -97,7 +97,7 @@ namespace LibraryOfTheWorld.Services
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true, WriteIndented = true });
                     return createdEntity;
                 }
-                else {throw new Exception("no Customer Could be created"); }
+                else {throw new Exception("no Customer Could be created"); }    
             }
             catch (Exception ex)
             {
