@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryOfClasses.Classes;
-
-namespace Classes_ModelLibrary.VeiwModes
+﻿namespace Classes_ModelLibrary.VeiwModes
 {
     public class UserVeiwModel
     {

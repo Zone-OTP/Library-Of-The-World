@@ -1,7 +1,6 @@
 ﻿using LibraryApi.Data;
 using LibraryApi.Models;
 using LibraryApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryApi.Controllers
@@ -19,9 +18,11 @@ namespace LibraryApi.Controllers
         [HttpPost("send-login-email")]
         public async Task<IActionResult> NotifyOfLogIn(Customer customer)
         {
-            if (await MailingService.SendMailPostSginIn(customer.Email, customer.Name)) {
+            if (await MailingService.SendMailPostSginIn(customer.Email, customer.Name))
+            {
                 return Ok("Mail Has Been Sent");
-            }else { return BadRequest("We don't know what happened but we will fix it"); }  
+            }
+            else { return BadRequest("We don't know what happened but we will fix it"); }
         }
     }
 }

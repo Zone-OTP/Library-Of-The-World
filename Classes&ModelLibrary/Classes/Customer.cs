@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace LibraryOfClasses.Classes
 {
@@ -14,7 +13,7 @@ namespace LibraryOfClasses.Classes
         public string Email { get; set; }
         public List<BookCheckout> BookCheckouts { get; set; } = new List<BookCheckout>();
 
-        
+
         public Customer(string name, string password, string personalGovernmentID, string email)
         {
             Name = name;

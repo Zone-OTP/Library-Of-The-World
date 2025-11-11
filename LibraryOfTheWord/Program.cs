@@ -1,9 +1,4 @@
-﻿using LibraryOfTheWorld.Forms;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic.Logging;
-
-namespace LibraryOfTheWorld
+﻿namespace LibraryOfTheWorld
 {
     internal static class Program
     {

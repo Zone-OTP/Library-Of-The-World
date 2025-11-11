@@ -1,8 +1,8 @@
-﻿using LibraryOfClasses.Classes;
+﻿using LibraryErrorLogs;
+using LibraryOfClasses.Classes;
+using LibraryOfClasses.VeiwModes;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-using LibraryOfClasses.VeiwModes;
-using LibraryErrorLogs;
 
 namespace LibraryOfTheWorld.Forms
 {
@@ -21,7 +21,7 @@ namespace LibraryOfTheWorld.Forms
             _book = book;
             _logger = new LoggerService("EditBookForm");
             BookTitleTextBox.Text = _book.Name;
-            
+
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)

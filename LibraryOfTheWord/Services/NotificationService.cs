@@ -117,7 +117,7 @@ namespace LibraryOfTheWorld.Services
             catch (Exception ex) { Console.WriteLine($"Exception thrown at Mailing Front side notification service\n:{ex}"); }
         }
     }
- }
- 
+}
+
 
 

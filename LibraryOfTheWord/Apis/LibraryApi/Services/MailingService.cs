@@ -45,7 +45,8 @@ namespace LibraryApi.Services
         }
         public static async Task<bool> SendMailPostSginIn(string customerEmail, string customerName)
         {
-            try {
+            try
+            {
                 var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

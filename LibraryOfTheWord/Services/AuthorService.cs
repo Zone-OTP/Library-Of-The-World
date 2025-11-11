@@ -1,8 +1,7 @@
-﻿using System.Text;
-using System.Text.Json;
-using LibraryErrorLogs;
+﻿using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
-using LibraryOfClasses.VeiwModes;
+using System.Text;
+using System.Text.Json;
 
 
 
@@ -11,7 +10,7 @@ namespace LibraryOfTheWorld.Services
     internal class AuthorService
     {
 
-        
+
         private static readonly HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:5160") };
         private static List<Author> authorList;
         private static readonly ILoggerService _logger = new LoggerService("AuthorServiceFrontEnd");

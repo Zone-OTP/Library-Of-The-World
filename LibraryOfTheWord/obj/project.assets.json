@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0-windows8.0": {
+    "net9.0-windows7.0": {
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -1413,7 +1413,7 @@
           "build/_._": {}
         }
       },
-      "Serilog.Sinks.Console/6.0.0": {
+      "Serilog.Sinks.Console/6.1.1": {
         "type": "package",
         "dependencies": {
           "Serilog": "4.0.0"
@@ -2101,7 +2101,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Serilog": "4.3.0",
-          "Serilog.Sinks.Console": "6.0.0",
+          "Serilog.Sinks.Console": "6.1.1",
           "Serilog.Sinks.File": "7.0.0"
         },
         "compile": {
@@ -4414,10 +4414,10 @@
         "serilog.nuspec"
       ]
     },
-    "Serilog.Sinks.Console/6.0.0": {
-      "sha512": "fQGWqVMClCP2yEyTXPIinSr5c+CBGUvBybPxjAGcf7ctDhadFhrQw03Mv8rJ07/wR5PDfFjewf2LimvXCDzpbA==",
+    "Serilog.Sinks.Console/6.1.1": {
+      "sha512": "8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
       "type": "package",
-      "path": "serilog.sinks.console/6.0.0",
+      "path": "serilog.sinks.console/6.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4433,7 +4433,7 @@
         "lib/net8.0/Serilog.Sinks.Console.xml",
         "lib/netstandard2.0/Serilog.Sinks.Console.dll",
         "lib/netstandard2.0/Serilog.Sinks.Console.xml",
-        "serilog.sinks.console.6.0.0.nupkg.sha512",
+        "serilog.sinks.console.6.1.1.nupkg.sha512",
         "serilog.sinks.console.nuspec"
       ]
     },
@@ -5680,7 +5680,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0-windows8.0": [
+    "net9.0-windows7.0": [
       "Classes&ServicesLibrary >= 1.0.0",
       "LibraryApi >= 1.0.0",
       "LibraryErrorLogs >= 1.0.0",
@@ -5700,28 +5700,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BFB\\.nuget\\packages\\": {},
+    "C:\\Users\\MMA DEV WIZARD\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryOfTheWord\\LibraryOfTheWorld.csproj",
+      "projectUniqueName": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\LibraryOfTheWorld.csproj",
       "projectName": "LibraryOfTheWorld",
-      "projectPath": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryOfTheWord\\LibraryOfTheWorld.csproj",
-      "packagesPath": "C:\\Users\\BFB\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryOfTheWord\\obj\\",
+      "projectPath": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\LibraryOfTheWorld.csproj",
+      "packagesPath": "C:\\Users\\MMA DEV WIZARD\\.nuget\\packages\\",
+      "outputPath": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\BFB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MMA DEV WIZARD\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net9.0-windows8.0"
+        "net9.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -5729,17 +5729,17 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0-windows8.0": {
-          "targetAlias": "net9.0-windows8.0",
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\Classes&ModelLibrary\\Classes&ServicesLibrary.csproj": {
-              "projectPath": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\Classes&ModelLibrary\\Classes&ServicesLibrary.csproj"
+            "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\Classes&ModelLibrary\\Classes&ServicesLibrary.csproj": {
+              "projectPath": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\Classes&ModelLibrary\\Classes&ServicesLibrary.csproj"
             },
-            "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj": {
-              "projectPath": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj"
+            "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj": {
+              "projectPath": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryErrorLogs\\LibraryErrorLogs.csproj"
             },
-            "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj": {
-              "projectPath": "C:\\Users\\BFB\\source\\repos\\Zone-OTP\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj"
+            "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj": {
+              "projectPath": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj"
             }
           }
         }
@@ -5757,8 +5757,8 @@
       "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net9.0-windows8.0": {
-        "targetAlias": "net9.0-windows8.0",
+      "net9.0-windows7.0": {
+        "targetAlias": "net9.0-windows",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": {
             "target": "Package",
@@ -5836,7 +5836,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

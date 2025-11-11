@@ -201,7 +201,7 @@ namespace LibraryApi.Services
                 }
                 else { return 0.0; }
             }
-            catch (Exception ex) { await _logger.LogError(ex,ex.Message); return 0.0; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return 0.0; }
         }
     }
 }

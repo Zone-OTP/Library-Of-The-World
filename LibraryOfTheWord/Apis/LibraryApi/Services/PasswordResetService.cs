@@ -2,7 +2,6 @@
 using LibraryApi.Models;
 using LibraryErrorLogs;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
 
 namespace LibraryApi.Services
 {
@@ -29,7 +28,7 @@ namespace LibraryApi.Services
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception ex) { await _logger.LogError(ex, ex.Message);return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
         public static async Task<bool> RequestSending(string email, LibraryContext _context)
         {
@@ -55,7 +54,7 @@ namespace LibraryApi.Services
                 await MailingService.SendMailToResetPassword(email, resetLink);
                 return true;
             }
-            catch (Exception ex) { await _logger.LogError(ex, ex.Message);return false; }
+            catch (Exception ex) { await _logger.LogError(ex, ex.Message); return false; }
         }
     }
 }

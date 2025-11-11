@@ -1,7 +1,7 @@
-﻿using LibraryOfTheWorld.Forms;
+﻿using LibraryErrorLogs;
+using LibraryOfTheWorld.Forms;
 using LibraryOfTheWorld.Services;
 using LibraryOfTheWorld.Themes;
-using LibraryErrorLogs;
 
 namespace LibraryOfTheWorld
 {
@@ -42,7 +42,7 @@ namespace LibraryOfTheWorld
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(password))
                 {
                     var user = await ValidationService.SignInValidation(name, password);
-                    
+
                     if (user != null && user.IsAdmin)
                     {
                         await _logger.LogInformation($"Admin has Signed in Name of {name}");
@@ -71,7 +71,7 @@ namespace LibraryOfTheWorld
                 }
                 else { throw new Exception("name or password can't be empty"); }
             }
-            catch (Exception ex) { await _logger.LogError(ex,"Error at SignIn"+ex.Message); }
+            catch (Exception ex) { await _logger.LogError(ex, "Error at SignIn" + ex.Message); }
         }
 
         private void Switch_Click(object sender, EventArgs e)

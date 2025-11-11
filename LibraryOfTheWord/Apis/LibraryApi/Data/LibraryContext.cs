@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using LibraryApi.Models;
+﻿using LibraryApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApi.Data;
@@ -36,7 +34,7 @@ public partial class LibraryContext : DbContext
         modelBuilder.Entity<Admin>().HasData(
                 new Admin
                 {
-                    AdminId = 1, 
+                    AdminId = 1,
                     Name = "admin",
                     Password = "admin"
                 }

@@ -1,0 +1,9 @@
+2025-11-11 21:12:06.511 +04:00 [ERR] Error at SignInname or password is incorrect
+System.Exception: name or password is incorrect
+   at LibraryOfTheWorld.Signin.SignInButton_Click(Object sender, EventArgs e) in D:\WORK STUFF ZEZVA\Library-Of-The-World\LibraryOfTheWord\Forms\SignIn&Up\Sign in.cs:line 70
+2025-11-11 21:12:10.315 +04:00 [ERR] Error at SignInname or password is incorrect
+System.Exception: name or password is incorrect
+   at LibraryOfTheWorld.Signin.SignInButton_Click(Object sender, EventArgs e) in D:\WORK STUFF ZEZVA\Library-Of-The-World\LibraryOfTheWord\Forms\SignIn&Up\Sign in.cs:line 70
+2025-11-11 21:12:17.315 +04:00 [ERR] Error at SignInname or password is incorrect
+System.Exception: name or password is incorrect
+   at LibraryOfTheWorld.Signin.SignInButton_Click(Object sender, EventArgs e) in D:\WORK STUFF ZEZVA\Library-Of-The-World\LibraryOfTheWord\Forms\SignIn&Up\Sign in.cs:line 70

@@ -1,7 +1,6 @@
 ﻿using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
 using LibraryOfClasses.VeiwModes;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -87,7 +86,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                await _logger.LogError(ex,$"Error posting Authors to API: {ex.Message}");
+                await _logger.LogError(ex, $"Error posting Authors to API: {ex.Message}");
                 return false;
             }
         }
@@ -104,7 +103,7 @@ namespace LibraryOfTheWorld.Services
             }
             catch (Exception ex)
             {
-                await _logger.LogError(ex,$"Error deleting book: {ex.Message}");
+                await _logger.LogError(ex, $"Error deleting book: {ex.Message}");
                 return false;
             }
         }
@@ -142,7 +141,7 @@ namespace LibraryOfTheWorld.Services
             catch (Exception ex)
             {
 
-                await _logger.LogError(ex,$"Error {ex.Message}");
+                await _logger.LogError(ex, $"Error {ex.Message}");
                 return false;
             }
         }

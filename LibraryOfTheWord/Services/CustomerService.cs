@@ -1,8 +1,7 @@
-﻿using System.Text;
-using System.Text.Json;
-using LibraryErrorLogs;
+﻿using LibraryErrorLogs;
 using LibraryOfClasses.Classes;
-using LibraryOfTheWorld.Services;
+using System.Text;
+using System.Text.Json;
 
 namespace LibraryOfTheWorld.Services
 {
@@ -89,7 +88,7 @@ namespace LibraryOfTheWorld.Services
                 var content = new StringContent(jsonCustomer, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await client.PostAsync(endpoint, content);
-                 if (response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     NotificationService.ShowMessage(await response.Content.ReadAsStringAsync());
                     string responseJson = await response.Content.ReadAsStringAsync();
@@ -97,11 +96,11 @@ namespace LibraryOfTheWorld.Services
                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true, WriteIndented = true });
                     return createdEntity;
                 }
-                else {throw new Exception("no Customer Could be created"); }    
+                else { throw new Exception("no Customer Could be created"); }
             }
             catch (Exception ex)
             {
-                await _logger.LogError(ex,$"Error posting Customers to API: {ex.Message}");
+                await _logger.LogError(ex, $"Error posting Customers to API: {ex.Message}");
                 return null;
             }
 
