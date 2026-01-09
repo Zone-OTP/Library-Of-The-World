@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LibraryOfTheWord\\ThemeManager",
+    "\\LibraryOfTheWord\\Web",
+    "\\LibraryOfTheWord\\Web\\ChangePasswordWebApp"
   ],
-  "SelectedNode": "\\LibraryOfTheWord.sln",
+  "SelectedNode": "\\LibraryOfTheWord",
   "PreviewInSolutionExplorer": false
 }

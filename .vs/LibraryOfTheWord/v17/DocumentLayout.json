@@ -180,7 +180,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 505,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -199,10 +199,6 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Microsoft.PackageDependencyResolution.targets",
@@ -210,8 +206,7 @@
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "ViewState": "AgIAAPUAAAAAAAAAAAAAAAkBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-11T18:09:43.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:09:43.549Z"
             },
             {
               "$type": "Document",
@@ -221,8 +216,7 @@
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.307\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.targets",
               "ViewState": "AgIAAHkAAAAAAAAAAAAAAI0AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-11-11T18:08:59.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:08:59.324Z"
             },
             {
               "$type": "Document",
@@ -234,8 +228,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\logs\\CustomerServiceFrontEnd-log20251111.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-11T18:07:18.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:07:18.05Z"
             },
             {
               "$type": "Document",
@@ -247,8 +240,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\logs\\Signin-log20251111.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-11T18:07:11.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:07:11.326Z"
             },
             {
               "$type": "Document",
@@ -258,7 +250,7 @@
               "RelativeDocumentMoniker": "LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj",
               "ToolTip": "D:\\WORK STUFF ZEZVA\\Library-Of-The-World\\LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj",
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\LibraryApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-11T17:23:24.14Z",
               "EditorCaption": ""
@@ -273,8 +265,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\MailingService.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAYwHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T12:55:55.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T12:55:55.267Z"
             },
             {
               "$type": "Document",
@@ -299,8 +290,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\logs\\SignUp-log20251111.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-11-11T18:07:19.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:07:19.359Z"
             },
             {
               "$type": "Document",
@@ -312,8 +302,7 @@
               "RelativeToolTip": "LibraryOfTheWord\\Apis\\LibraryApi\\Services\\PasswordResetService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAgwC4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-20T12:55:55.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-20T12:55:55.406Z"
             },
             {
               "$type": "Document",
